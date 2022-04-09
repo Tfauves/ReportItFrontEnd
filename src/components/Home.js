@@ -1,14 +1,10 @@
 import React, {useState} from 'react';
-import Button from './Button';
+// import Button from './Button';
 
 
 const Home = () => {
 
   const [count, setCount] = useState(0);
-
-//   const handleClick = () => {
-//     setCount(count + 1);
-//   } 
 
   const handleReduce = () => {
     setCount(count - 1);
@@ -25,9 +21,9 @@ const Home = () => {
       <h1>Home</h1>
       <div style={{display: 'flex', width: '100%', flexDirection: 'row'}}>
         
-        <Button >
+        {/* <Button >
           <p>Click Me!</p>
-        </Button>
+        </Button> */}
       </div>
       
     </div>

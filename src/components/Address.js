@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const Address = () => {
-  const [address, setaddress] = useState({});
+  const [data, setaddress] = useState({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -24,9 +24,9 @@ const Address = () => {
   const displayAddress = () => {
     return (
       <div>
-        <h2>{address.city}</h2>
-        <p>{address.state}</p>
-        <p>{address.state_fullname}</p>
+        <h2>{data.city}</h2>
+        <p>{data.state}</p>
+        <p>{data.state_fullname}</p>
       </div>
     );
   };
