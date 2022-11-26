@@ -26,7 +26,7 @@ const NavBar = (props) => {
           padding: "0em 1.2em",
         }}
       >
-        <h1 style={{ color: "#F1F1F1" }}>ReportIt!!!</h1>
+        <NavButton style={{}} to="/" label="ReportIt!!!" />
       </div>
       <div
         style={{
@@ -42,14 +42,14 @@ const NavBar = (props) => {
           justifyContent: "flex-end",
         }}
       >
-        <NavButton style={{}} to="/" label="home" />
         {auth.token ? (
-          <NavButton style={{}} to="/profile" label="profile" />
+          <Fragment>
+            <NavButton style={{}} to="/profile" label="profile" />
+            <NavButton style={{}} to="/logout" label="logout" />
+          </Fragment>
         ) : (
           <Fragment>
             <NavButton style={{}} to="/login" label="login" />
-            <NavButton style={{}} to="/register" label="sign up" />
-            <NavButton style={{}} to="/logout" label="logout" />
           </Fragment>
         )}
       </div>
