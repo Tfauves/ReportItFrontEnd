@@ -5,6 +5,7 @@ import Home from "../Home/Home";
 import Login from "../Auth/Login";
 import Register from "../Auth/Register";
 import Profile from "../Profile/Profile";
+import Landing from "../Home/Landing";
 
 const AppRouter = () => {
   return (
@@ -12,7 +13,7 @@ const AppRouter = () => {
       <Navbar />
       <div style={{ marginTop: "50px", width: "100%" }}>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Landing />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />

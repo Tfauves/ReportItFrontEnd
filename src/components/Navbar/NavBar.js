@@ -26,7 +26,8 @@ const NavBar = (props) => {
           padding: "0em 1.2em",
         }}
       >
-        <NavButton style={{}} to="/" label="ReportIt!!!" />
+        <h2>Report It !!!</h2>
+        {/* <NavButton style={{}} to="/" label="ReportIt!!!" /> */}
       </div>
       <div
         style={{

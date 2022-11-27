@@ -17,4 +17,5 @@ code {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: "#2C2D30";
 }
