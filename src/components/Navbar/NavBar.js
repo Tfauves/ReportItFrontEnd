@@ -49,7 +49,9 @@ const NavBar = (props) => {
           </Fragment>
         ) : (
           <Fragment>
+            <NavButton style={{}} to="/about" label="about" />
             <NavButton style={{}} to="/login" label="login" />
+            <NavButton style={{}} to="/admin" label="admin" />
           </Fragment>
         )}
       </div>

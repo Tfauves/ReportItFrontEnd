@@ -1,26 +1,26 @@
-import React from 'react';
-import Button from '../common/Button';
-import Form from '../common/Form';
-import InlineInputContainer from '../common/InlineInputContainer';
-import Input from '../common/Input';
+import React from "react";
+import { Button } from "@mui/material";
+import Form from "../common/Form";
+import InlineInputContainer from "../common/InlineInputContainer";
+import Input from "../common/Input";
 
 const NewUserForm = (props) => {
-  const {query, updateForm, onSubmit} = props;
+  const { query, updateForm, onSubmit } = props;
 
   const handleChange = (e) => {
     updateForm(e.target.id, e.target.value);
-  }
+  };
 
   const handleSubmit = (e) => {
     onSubmit(e);
-  }
+  };
 
   return (
     <Form
       onSubmit={handleSubmit}
       style={{
-        maxWidth: "800px",
-        width: "100%",
+        maxWidth: "100px",
+        width: "500%",
       }}
     >
       <InlineInputContainer>
@@ -71,10 +71,15 @@ const NewUserForm = (props) => {
           value={query.zipcode}
         />
       </InlineInputContainer>
-      <Button>Submit</Button>
+      <Button
+        style={{ margin: "1em" }}
+        onClick={handleSubmit}
+        variant="contained"
+      >
+        SUBMIT
+      </Button>
     </Form>
-  )
-
-}
+  );
+};
 
 export default NewUserForm;
