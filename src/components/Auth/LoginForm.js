@@ -44,7 +44,7 @@ const LoginForm = ({ query, submitting, updateForm, onSubmit }) => {
       {/* <Button disabled={submitting}>Login</Button> */}
 
       <Button
-        style={{ margin: "1em" }}
+        style={{ marginTop: "2em", margin: "1em" }}
         onClick={handleSubmit}
         variant="contained"
       >

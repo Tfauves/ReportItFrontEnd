@@ -6,6 +6,7 @@ import Login from "../Auth/Login";
 import Register from "../Auth/Register";
 import Profile from "../Profile/Profile";
 import Landing from "../Home/Landing";
+import About from "../About";
 
 const AppRouter = () => {
   return (
@@ -17,6 +18,7 @@ const AppRouter = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </div>
     </div>

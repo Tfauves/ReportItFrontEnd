@@ -13,6 +13,11 @@ const Login = () => {
   // const [errors, setErrors] = useState({});
   const navigate = useNavigate();
   const [auth, setAuth, saveAuth] = useContext(AuthContext);
+  let greeting = [
+    "Welcome Back",
+    "Greetings Hero",
+    "Go Ahead Login, Make A Difference",
+  ];
 
   const updateForm = (field, value) => {
     setQuery({
@@ -52,9 +57,12 @@ const Login = () => {
         flexDirection: "column",
         alignItems: "center",
         minHeight: "100vh",
+        backgroundColor: "#1c1c1b",
       }}
     >
-      <h1>Login</h1>
+      <h1 style={{ marginTop: "3em", marginBottom: "2em", color: "#f1f1f1" }}>
+        {greeting[0]}
+      </h1>
       <LoginForm
         query={query}
         updateForm={updateForm}

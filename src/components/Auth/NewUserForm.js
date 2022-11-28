@@ -3,6 +3,7 @@ import { Button } from "@mui/material";
 import Form from "../common/Form";
 import InlineInputContainer from "../common/InlineInputContainer";
 import Input from "../common/Input";
+import { width } from "@mui/system";
 
 const NewUserForm = (props) => {
   const { query, updateForm, onSubmit } = props;
@@ -52,6 +53,7 @@ const NewUserForm = (props) => {
           placeholder="Password"
           type="password"
           onChange={handleChange}
+          required={true}
           value={query.password}
         />
         <Input
@@ -68,11 +70,12 @@ const NewUserForm = (props) => {
           placeholder="zipcode"
           type="number"
           onChange={handleChange}
+          required={true}
           value={query.zipcode}
         />
       </InlineInputContainer>
       <Button
-        style={{ margin: "1em" }}
+        style={{ marginTop: "2em", margin: "1em" }}
         onClick={handleSubmit}
         variant="contained"
       >

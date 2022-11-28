@@ -16,33 +16,54 @@ const Landing = () => {
 
   const displayLanding = () => {
     return (
-      <div style={{ backgroundColor: "#2C2D30" }}>
+      <div style={{ backgroundColor: "#1c1c1b" }}>
         <Container>
           <h1
             style={{
               display: "flex",
               justifyContent: "center",
-              marginTop: "3em",
+              marginTop: "2em",
+              marginBottom: "3em",
+              color: "#f1f1f1",
             }}
           >
-            {" "}
-            some cool landing slogan
+            Be A Civic Crusader
           </h1>
+          <h4 style={{ marginTop: "-3.5em", color: "#eee" }}>
+            report issues in your area
+          </h4>
           <Splash
             image={landingImg}
-            style={{ marginTop: "3em", height: "25vh" }}
+            style={{
+              marginTop: "3em",
+              height: "35vh",
+            }}
           />
 
           <Button
-            style={{ marginTop: "3em", width: "35%", height: "4vh" }}
+            style={{
+              marginTop: "5em",
+              width: "35%",
+              height: "4vh",
+            }}
             size="large"
             variant="contained"
-            color="primary"
+            color="secondary"
             onClick={onClick}
           >
             Signup
           </Button>
         </Container>
+        <div
+          style={{
+            height: "10vh",
+            backgroundColor: "gray",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <h2>footer</h2>
+        </div>
       </div>
     );
   };
