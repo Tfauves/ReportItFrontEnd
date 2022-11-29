@@ -27,7 +27,7 @@ const Landing = () => {
               color: "#f1f1f1",
             }}
           >
-            Be A Civic Crusader
+            Want To Be A Civic Crusader
           </h1>
           <h4 style={{ marginTop: "-3.5em", color: "#eee" }}>
             report issues in your area

@@ -68,7 +68,6 @@ const NewUserForm = (props) => {
         <Input
           id="zipcode"
           placeholder="zipcode"
-          type="number"
           onChange={handleChange}
           required={true}
           value={query.zipcode}

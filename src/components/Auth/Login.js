@@ -40,7 +40,7 @@ const Login = () => {
       console.log(profileRes.data);
       setAuth({ token: res.data.token, profile: profileRes.data });
       setSubmitting(false);
-      navigate("/profile");
+      navigate(`/profile/${profileRes.data.id}`);
       // saveAuth(res.data);
     } catch (err) {
       console.error(err.response.data.message);
