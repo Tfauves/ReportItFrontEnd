@@ -3,8 +3,10 @@ import Form from "../common/Form";
 import Input from "../common/Input";
 import { Button } from "@mui/material";
 import InlineInputContainer from "../common/InlineInputContainer";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = ({ query, submitting, updateForm, onSubmit }) => {
+  const navigate = useNavigate();
   const handleChange = (e) => {
     updateForm(e.target.id, e.target.value);
   };
@@ -13,44 +15,64 @@ const LoginForm = ({ query, submitting, updateForm, onSubmit }) => {
     onSubmit(e);
   };
 
-  return (
-    <Form
-      onSubmit={handleSubmit}
-      style={{
-        maxWidth: "100px",
-        width: "50%",
-      }}
-    >
-      <InlineInputContainer>
-        <Input
-          id="username"
-          placeholder="Email address"
-          type="email"
-          onChange={handleChange}
-          value={query.username}
-          required
-        />
-      </InlineInputContainer>
-      <InlineInputContainer>
-        <Input
-          id="password"
-          placeholder="Password"
-          type="password"
-          onChange={handleChange}
-          value={query.password}
-          required
-        />
-      </InlineInputContainer>
-      {/* <Button disabled={submitting}>Login</Button> */}
+  const handleNavigate = () => {
+    navigate("/register");
+  };
 
-      <Button
-        style={{ marginTop: "2em", margin: "1em" }}
-        onClick={handleSubmit}
-        variant="contained"
+  return (
+    <div>
+      <Form
+        onSubmit={handleSubmit}
+        style={{
+          maxWidth: "100px",
+          width: "50%",
+        }}
       >
-        login
-      </Button>
-    </Form>
+        <InlineInputContainer>
+          <Input
+            id="username"
+            placeholder="Email address"
+            type="email"
+            onChange={handleChange}
+            value={query.username}
+            required
+          />
+        </InlineInputContainer>
+        <InlineInputContainer>
+          <Input
+            id="password"
+            placeholder="Password"
+            type="password"
+            onChange={handleChange}
+            value={query.password}
+            required
+          />
+        </InlineInputContainer>
+        {/* <Button disabled={submitting}>Login</Button> */}
+      </Form>
+      <div
+        style={{ marginTop: "1em", display: "flex", flexDirection: "column" }}
+      >
+        <Button
+          sx={{ "&:hover": { color: "#303030" } }}
+          style={{ marginBottom: ".5em" }}
+          onClick={handleSubmit}
+          variant="contained"
+          size="large"
+        >
+          login
+        </Button>
+        <Button
+          sx={{ "&:hover": { color: "#303030" } }}
+          style={{ backgroundColor: "gray" }}
+          onClick={handleNavigate}
+          variant="contained"
+          size="large"
+        >
+          create account
+        </Button>
+      </div>
+    </div>
   );
 };
 

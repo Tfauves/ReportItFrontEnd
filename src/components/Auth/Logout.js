@@ -19,6 +19,7 @@ const Logout = (props) => {
     localStorage.removeItem("Roles");
 
     alert("You are now logged out");
+
     navigate("/");
   }, []);
 

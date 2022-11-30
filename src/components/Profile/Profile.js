@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import { apiHost } from "../../config";
 import CircularProgress from "@mui/material/CircularProgress";
+import ProfileCard from "./ProfileCard";
 
 const Profile = (props) => {
   const params = useParams();
@@ -36,9 +37,7 @@ const Profile = (props) => {
   const displayProfile = () => {
     return (
       <div>
-        <h1 style={{ color: "#f1f1f1" }}>{owner.id}</h1>
-        <h1 style={{ color: "#f1f1f1" }}>{owner.fname}</h1>
-        <h1 style={{ color: "#f1f1f1" }}>{owner.lname}</h1>
+        <ProfileCard userPro={owner} />
       </div>
     );
   };

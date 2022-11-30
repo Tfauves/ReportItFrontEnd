@@ -26,7 +26,7 @@ const NavBar = (props) => {
           padding: "0em 1.2em",
         }}
       >
-        <h2 style={{ color: "#f1f1f1" }}>Report It !!!</h2>
+        <h2 style={{ color: "#f1f1f1" }}>Report It</h2>
         {/* <NavButton style={{}} to="/" label="ReportIt!!!" /> */}
       </div>
       <div
@@ -45,14 +45,14 @@ const NavBar = (props) => {
       >
         {auth.token ? (
           <Fragment>
-            <NavButton style={{}} to="/profile" label="profile" />
+            {/* <NavButton style={{}} to="/profile" label="profile" /> */}
             <NavButton style={{}} to="/logout" label="logout" />
           </Fragment>
         ) : (
           <Fragment>
             <NavButton style={{}} to="/about" label="about" />
-            <NavButton style={{}} to="/login" label="login" />
-            {/* <NavButton style={{}} to="/admin" label="admin" /> */}
+            {/* <NavButton style={{}} to="/login" label="login" /> */}
+            <NavButton style={{}} to="/admin" label="admin" />
           </Fragment>
         )}
       </div>

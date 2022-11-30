@@ -7,6 +7,7 @@ import Register from "../Auth/Register";
 import Profile from "../Profile/Profile";
 import Landing from "../Home/Landing";
 import About from "../About";
+import AdminView from "../Profile/AdminView";
 
 const AppRouter = () => {
   return (
@@ -19,6 +20,7 @@ const AppRouter = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/profile/:id" element={<Profile />} />
           <Route path="/about" element={<About />} />
+          <Route path="/admin" element={<AdminView />} />
           <Route path="/logout" element={<Logout />} />
         </Routes>
       </div>

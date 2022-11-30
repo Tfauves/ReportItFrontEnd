@@ -11,7 +11,7 @@ const AuthProvider = (props) => {
   });
 
   const saveAuth = (newAuth) => {
-    if (localStorage["Token"] != undefined) {
+    if (localStorage["Token"] !== undefined) {
       localStorage.removeItem("Token");
       localStorage.removeItem("Profile");
       localStorage.removeItem("Roles");
@@ -25,7 +25,7 @@ const AuthProvider = (props) => {
   };
 
   useEffect(() => {
-    if (localStorage["Token"] != undefined) {
+    if (localStorage["Token"] !== undefined) {
       setAuth({
         token: JSON.parse(localStorage["Token"]),
         profile: {

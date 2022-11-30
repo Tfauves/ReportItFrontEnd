@@ -41,7 +41,7 @@ const Login = () => {
       setAuth({ token: res.data.token, profile: profileRes.data });
       setSubmitting(false);
       navigate(`/profile/${profileRes.data.id}`);
-      // saveAuth(res.data);
+      saveAuth(res.data);
     } catch (err) {
       console.error(err.response.data.message);
       alert(err.response.data.error);
