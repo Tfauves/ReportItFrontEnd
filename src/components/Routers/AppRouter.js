@@ -8,6 +8,7 @@ import Profile from "../Profile/Profile";
 import Landing from "../Home/Landing";
 import About from "../About";
 import AdminView from "../Profile/AdminView";
+import ProfileAddress from "../Profile/ProfileAddress";
 
 const AppRouter = () => {
   return (
@@ -22,6 +23,7 @@ const AppRouter = () => {
           <Route path="/about" element={<About />} />
           <Route path="/admin" element={<AdminView />} />
           <Route path="/logout" element={<Logout />} />
+          <Route path="/profileAd" element={<ProfileAddress />} />
         </Routes>
       </div>
     </div>

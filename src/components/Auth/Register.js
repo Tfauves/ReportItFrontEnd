@@ -47,13 +47,13 @@ const Register = () => {
     try {
       const res = await axios.post(`${host}/api/auth/signin`, data);
       // alert(res.data.token);
-      createDeveloper(data, res.data.token);
+      createNewUser(data, res.data.token);
     } catch (err) {
       alert(err.response.data.message);
     }
   };
 
-  const createDeveloper = async (data, token) => {
+  const createNewUser = async (data, token) => {
     data.email = data.username;
     try {
       const res = await axios.post(`${host}/api/profile`, data, {
@@ -64,7 +64,7 @@ const Register = () => {
       console.log(res.data);
       setAuth({ token, profile: res.data });
       alert(res.data.id);
-      navigate("/profile");
+      navigate(`/profile/${res.data.id}`);
     } catch (err) {
       alert(err.response.data.message);
     }

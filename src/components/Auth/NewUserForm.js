@@ -5,7 +5,6 @@ import InlineInputContainer from "../common/InlineInputContainer";
 import Input from "../common/Input";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
-import { LinkOffRounded } from "@mui/icons-material";
 
 const NewUserForm = (props) => {
   const { query, updateForm, onSubmit } = props;
@@ -65,7 +64,6 @@ const NewUserForm = (props) => {
             value={query.zipcode}
           />
         </InlineInputContainer>
-
         <InlineInputContainer>
           <p
             style={{
