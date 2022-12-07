@@ -7,8 +7,10 @@ import Register from "../Auth/Register";
 import Profile from "../Profile/Profile";
 import Landing from "../Home/Landing";
 import About from "../About";
-import AdminView from "../Profile/AdminView";
+import AdminView from "../AreaAdmin/AdminView";
 import ProfileAddress from "../Profile/ProfileAddress";
+import AdminLogin from "../AreaAdmin/AdminLogin";
+import AdminDash from "../AreaAdmin/AdminDash";
 
 const AppRouter = () => {
   return (
@@ -24,6 +26,8 @@ const AppRouter = () => {
           <Route path="/admin" element={<AdminView />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/profileAd" element={<ProfileAddress />} />
+          <Route path="/adminlogin" element={<AdminLogin />} />
+          <Route path="/admindash" element={<AdminDash />} />
         </Routes>
       </div>
     </div>
