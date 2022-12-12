@@ -1,6 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
+import { styled } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
+import Grid from "@mui/material/Unstable_Grid2";
 
 const AdminView = () => {
   const navigate = useNavigate();
@@ -12,8 +16,16 @@ const AdminView = () => {
   const handleNavigateAbout = () => {
     navigate("/about");
   };
+
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+    ...theme.typography.body2,
+    textAlign: "center",
+    color: theme.palette.text.secondary,
+  }));
+
   return (
-    <div style={{}}>
+    <div>
       <div
         class="row"
         style={{
@@ -21,6 +33,8 @@ const AdminView = () => {
           flexDirection: "row",
           flexWrap: "wrap",
           width: "100%",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         <div
@@ -30,34 +44,29 @@ const AdminView = () => {
             flexDirection: "column",
             flexBasis: "100%",
             flex: "1",
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundColor: "#d5d3db",
+            height: "100vh",
           }}
         >
-          <div
-            class="left-column"
-            style={{
-              backgroundColor: "#d5d3db",
-              height: "100vh",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <div style={{}}>
-              <h1>log here</h1>
-            </div>
-            enter admin portal
-            <div>
-              <Button
-                sx={{ "&:hover": { color: "#303030" } }}
-                style={{ backgroundColor: "gray", marginTop: ".5em" }}
-                onClick={handleNavigate}
-                variant="contained"
-                size="large"
-              >
-                enter
-              </Button>
-            </div>
+          <h1 style={{ color: "#303030" }}>Image or text here</h1>
+          <p style={{ color: "#303030" }}>enter admin portal</p>
+          <div>
+            <Button
+              sx={{ "&:hover": { color: "#303030" } }}
+              style={{
+                backgroundColor: "gray",
+              }}
+              onClick={handleNavigateAbout}
+              variant="contained"
+              size="large"
+            >
+              click here
+            </Button>
           </div>
         </div>
+
         <div
           class="column"
           style={{
@@ -65,37 +74,32 @@ const AdminView = () => {
             flexDirection: "column",
             flexBasis: "100%",
             flex: "1",
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundColor: "#1c1c1b",
+            height: "100vh",
           }}
         >
-          <div
-            class="right-column"
-            style={{ backgroundColor: "#1c1c1b", height: "100vh" }}
-          >
-            <div style={{}}>
-              <h1 style={{ color: "white" }}>Image or text here</h1>
-            </div>
-            Some Text in Column Two
-            <div>
-              <Button
-                sx={{ "&:hover": { color: "#303030" } }}
-                style={{
-                  backgroundColor: "gray",
-                }}
-                onClick={handleNavigateAbout}
-                variant="contained"
-                size="large"
-              >
-                learn more
-              </Button>
-            </div>
+          <h1 style={{ color: "#f1f1f1" }}>Image or text here</h1>
+          <p style={{ color: "#f1f1f1" }}>
+            how can RepotIt work for your municipality
+          </p>
+          <div>
+            <Button
+              sx={{ "&:hover": { color: "#303030" } }}
+              style={{
+                backgroundColor: "gray",
+              }}
+              onClick={handleNavigateAbout}
+              variant="contained"
+              size="large"
+            >
+              learn more
+            </Button>
           </div>
         </div>
       </div>
     </div>
-    // <div style={{ flexDirection: "column", backgroundColor: "blue" }}>
-    //   <h1>this admin view</h1>
-
-    // </div>
   );
 };
 export default AdminView;
