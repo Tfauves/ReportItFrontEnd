@@ -23,10 +23,40 @@ const AdminLogin = () => {
 
   const onSubmit = async () => {
     setSubmitting(true);
+    // need to refactor service admin in the back
+    // try {
+    //   const res = await axios.post(`${apiHost}/api/auth/adminsignin`, query);
+    //   const profileRes = await axios.get(`${apiHost}/api/profile/self`, {
+    //     headers: {
+    //       Authorization: `Bearer ${res.data.token}`,
+    //     },
+    //   });
+    //   console.log(profileRes.data);
+    //   setAuth({ token: res.data.token, profile: profileRes.data });
+    //   setSubmitting(false);
+    //   navigate(`/admindash/${profileRes.data.id}`);
+    //   saveAuth(res.data);
+    // } catch (err) {
+    //   console.error(err.response.data.message);
+    //   alert(err.response.data.error);
+    //   setSubmitting(false);
+    // }
   };
+
   return (
-    <div>
-      <h1>admin Login</h1>
+    <div
+      style={{
+        display: "flex",
+        flex: "1",
+        flexDirection: "column",
+        alignItems: "center",
+        minHeight: "100vh",
+        backgroundColor: "#1c1c1b",
+      }}
+    >
+      <h1 style={{ marginTop: "3em", marginBottom: "2em", color: "#f1f1f1" }}>
+        Admin Login
+      </h1>
       <AdminLoginForm
         query={query}
         updateForm={updateForm}

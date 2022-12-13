@@ -21,7 +21,13 @@ const AdminLoginForm = ({ query, submitting, updateForm, onSubmit }) => {
 
   return (
     <div>
-      <Form onSubmit={handleSubmit}>
+      <Form
+        onSubmit={handleSubmit}
+        style={{
+          maxWidth: "100px",
+          width: "50%",
+        }}
+      >
         <InlineInputContainer>
           <Input
             id="username"
@@ -44,7 +50,9 @@ const AdminLoginForm = ({ query, submitting, updateForm, onSubmit }) => {
         </InlineInputContainer>
       </Form>
 
-      <div>
+      <div
+        style={{ marginTop: "1em", display: "flex", flexDirection: "column" }}
+      >
         <Button
           sx={{ "&:hover": { color: "#303030" } }}
           style={{ marginBottom: ".5em" }}

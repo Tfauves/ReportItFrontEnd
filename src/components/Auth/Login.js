@@ -3,6 +3,7 @@ import axios from "axios";
 import { AuthContext } from "../Providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import LoginForm from "./LoginForm";
+import { apiHost } from "../../config";
 
 const Login = () => {
   const [query, setQuery] = useState({
@@ -30,9 +31,8 @@ const Login = () => {
     // submit query to backend to login.
     setSubmitting(true);
     try {
-      const host = process.env.REACT_APP_API_HOST || "http://localhost:8080";
-      const res = await axios.post(`${host}/api/auth/signin`, query);
-      const profileRes = await axios.get(`${host}/api/profile/self`, {
+      const res = await axios.post(`${apiHost}/api/auth/signin`, query);
+      const profileRes = await axios.get(`${apiHost}/api/profile/self`, {
         headers: {
           Authorization: `Bearer ${res.data.token}`,
         },

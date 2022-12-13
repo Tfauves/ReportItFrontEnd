@@ -70,9 +70,7 @@ const AdminView = () => {
           }}
         >
           <h1 style={{ color: "#f1f1f1" }}>Image or text here</h1>
-          <p style={{ color: "#f1f1f1" }}>
-            how can RepotIt work for your municipality
-          </p>
+          <p style={{ color: "#f1f1f1" }}>Request a demo</p>
           <div>
             <Button
               sx={{ "&:hover": { color: "#303030" } }}
