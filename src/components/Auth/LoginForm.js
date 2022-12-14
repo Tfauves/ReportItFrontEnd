@@ -67,7 +67,7 @@ const LoginForm = ({ query, submitting, updateForm, onSubmit }) => {
         </p>
         <Button
           sx={{ "&:hover": { color: "#303030" } }}
-          style={{ backgroundColor: "gray", marginTop: "-6px" }}
+          style={{ backgroundColor: "gray" }}
           onClick={handleNavigate}
           variant="contained"
           size="large"

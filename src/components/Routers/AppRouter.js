@@ -11,6 +11,7 @@ import AdminView from "../AreaAdmin/AdminView";
 import ProfileAddress from "../Profile/ProfileAddress";
 import AdminLogin from "../AreaAdmin/AdminLogin";
 import AdminDash from "../AreaAdmin/AdminDash";
+import RequestInfo from "../RequestInfo";
 
 const AppRouter = () => {
   return (
@@ -28,6 +29,7 @@ const AppRouter = () => {
           <Route path="/profileAd" element={<ProfileAddress />} />
           <Route path="/adminlogin" element={<AdminLogin />} />
           <Route path="/admindash" element={<AdminDash />} />
+          <Route path="/info" element={<RequestInfo />} />
         </Routes>
       </div>
     </div>

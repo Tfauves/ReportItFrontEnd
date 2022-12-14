@@ -9,8 +9,8 @@ const AdminView = () => {
     navigate("/adminlogin");
   };
 
-  const handleNavigateAbout = () => {
-    navigate("/about");
+  const handleNavigateInfo = () => {
+    navigate("/info");
   };
 
   return (
@@ -77,7 +77,7 @@ const AdminView = () => {
               style={{
                 backgroundColor: "gray",
               }}
-              onClick={handleNavigateAbout}
+              onClick={handleNavigateInfo}
               variant="contained"
               size="large"
             >
