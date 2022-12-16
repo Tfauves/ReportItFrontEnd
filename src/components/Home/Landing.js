@@ -54,16 +54,6 @@ const Landing = () => {
             Signup
           </Button>
         </Container>
-        <div
-          style={{
-            height: "10vh",
-            backgroundColor: "gray",
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          <h2>footer</h2>
-        </div>
       </div>
     );
   };
