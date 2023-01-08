@@ -16,7 +16,7 @@ const AdminView = () => {
   return (
     <div>
       <div
-        class="row"
+        className="row"
         style={{
           display: "flex",
           flexDirection: "row",
@@ -27,7 +27,7 @@ const AdminView = () => {
         }}
       >
         <div
-          class="column"
+          className="column"
           style={{
             display: "flex",
             flexDirection: "column",
@@ -57,7 +57,7 @@ const AdminView = () => {
         </div>
 
         <div
-          class="column"
+          className="column"
           style={{
             display: "flex",
             flexDirection: "column",
