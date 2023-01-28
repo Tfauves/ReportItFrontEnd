@@ -15,6 +15,7 @@ const Register = () => {
     fname: "",
     lname: "",
     zip: "",
+    profileUsername: "",
   });
 
   const [auth, setAuth] = useContext(AuthContext);

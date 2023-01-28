@@ -48,20 +48,21 @@ const NewUserForm = (props) => {
             onChange={handleChange}
             value={query.lname}
           />
-          <Input
-            id="phone"
-            placeholder="Phone"
-            onChange={handleChange}
-            value={query.phone}
-          ></Input>
         </InlineInputContainer>
         <InlineInputContainer>
           <Input
-            id="zipcode"
-            placeholder="Zipcode"
+            id="zip"
+            placeholder="Zip"
             onChange={handleChange}
             required={true}
-            value={query.zipcode}
+            value={query.zip}
+          />
+          <Input
+            id="profileUsername"
+            placeholder="Username"
+            onChange={handleChange}
+            required={true}
+            value={query.profileUsername}
           />
         </InlineInputContainer>
         <InlineInputContainer>
