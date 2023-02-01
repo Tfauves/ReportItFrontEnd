@@ -6,11 +6,6 @@ const ProfileCard = (props) => {
 
   return (
     <div>
-      <h1 style={{ color: "#f1f1f1" }}>{id}</h1>
-      <h1 style={{ color: "#f1f1f1" }}>{profileUsername}</h1>
-      <h1 style={{ color: "#f1f1f1" }}>{title}</h1>
-      <h1 style={{ color: "#f1f1f1" }}>{serviceArea}</h1>
-      <h1 style={{ color: "#f1f1f1" }}>{reportCount}</h1>
       <img
         style={{ borderRadius: "100px" }}
         src={profilePic.url}
@@ -18,6 +13,11 @@ const ProfileCard = (props) => {
         height={250}
         alt="placeholder img"
       />
+      <h1 style={{ color: "#f1f1f1" }}>Profile id: {id}</h1>
+      <h1 style={{ color: "#f1f1f1" }}>Username: {profileUsername}</h1>
+      <h1 style={{ color: "#f1f1f1" }}>Rank: {title}</h1>
+      <h1 style={{ color: "#f1f1f1" }}>Service Area: {serviceArea}</h1>
+      <h1 style={{ color: "#f1f1f1" }}>Closed Report Count: {reportCount}</h1>
     </div>
   );
 };

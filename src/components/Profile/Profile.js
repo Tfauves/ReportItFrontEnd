@@ -5,6 +5,7 @@ import { AuthContext } from "../Providers/AuthProvider";
 import { apiHost } from "../../config";
 import CircularProgress from "@mui/material/CircularProgress";
 import ProfileCard from "./ProfileCard";
+import Report from "../Report/Report";
 
 const Profile = (props) => {
   const params = useParams();
@@ -12,6 +13,7 @@ const Profile = (props) => {
     id: params.id,
   });
 
+  const [reports, setReports] = useState({});
   const [loading, setLoading] = useState(true);
   const [auth] = useContext(AuthContext);
 
@@ -25,6 +27,7 @@ const Profile = (props) => {
       });
       console.log(response.data);
       setOwner(response.data);
+      setReports(response.data.report);
       setLoading(false);
     };
     setLoading(true);
@@ -38,8 +41,16 @@ const Profile = (props) => {
     return (
       <div>
         <ProfileCard userPro={owner} />
+        <h1 style={{ textDecoration: "underline", color: "#f1f1f1" }}>
+          Your reports
+        </h1>
+        {displayReports()}
       </div>
     );
+  };
+
+  const displayReports = () => {
+    return reports.map((report) => <Report report={report} key={report.id} />);
   };
 
   return (
