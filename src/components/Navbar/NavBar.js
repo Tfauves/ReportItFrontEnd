@@ -1,4 +1,4 @@
-import React, { useContext, Fragment } from "react";
+import React, { useState, useContext, Fragment } from "react";
 import NavButton from "./NavButton";
 import { AuthContext } from "../Providers/AuthProvider";
 
@@ -50,8 +50,8 @@ const NavBar = (props) => {
           </Fragment>
         ) : (
           <Fragment>
+            <NavButton style={{color: "#303030"}} to="/login" label="login" />
             <NavButton style={{}} to="/about" label="about" />
-            {/* <NavButton style={{}} to="/login" label="login" /> */}
             <NavButton style={{}} to="/admin" label="admin" />
           </Fragment>
         )}

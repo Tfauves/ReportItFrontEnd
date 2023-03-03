@@ -6,8 +6,12 @@ import { apiHost } from "../../config";
 import CircularProgress from "@mui/material/CircularProgress";
 import ProfileCard from "./ProfileCard";
 import Report from "../Report/Report";
+import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+
 
 const Profile = (props) => {
+  const navigate = useNavigate();
   const params = useParams();
   const [owner, setOwner] = useState({
     id: params.id,
@@ -37,6 +41,10 @@ const Profile = (props) => {
     _fetchOwner();
   }, [auth]);
 
+  const onClick = () => {
+    navigate("/sendReport")
+  }
+
   const displayProfile = () => {
     return (
       <div>
@@ -45,6 +53,19 @@ const Profile = (props) => {
           Your reports
         </h1>
         {displayReports()}
+
+        <Button
+          sx={{ "&:hover": { color: "#303030" } }}
+          style={{
+            marginTop: "2em",
+            margin: "1em",
+          }}
+          onClick={onClick}
+          variant="contained"
+          size="large"
+        >
+          ReportIt
+        </Button>
       </div>
     );
   };
