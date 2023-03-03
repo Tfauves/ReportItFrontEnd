@@ -12,6 +12,7 @@ import ProfileAddress from "../Profile/ProfileAddress";
 import AdminLogin from "../AreaAdmin/AdminLogin";
 import AdminDash from "../AreaAdmin/AdminDash";
 import RequestInfo from "../RequestInfo";
+import NewReport from "../NewReport";
 
 const AppRouter = () => {
   return (
@@ -30,6 +31,7 @@ const AppRouter = () => {
           <Route path="/adminlogin" element={<AdminLogin />} />
           <Route path="/admindash" element={<AdminDash />} />
           <Route path="/info" element={<RequestInfo />} />
+          <Route path="/sendReport" element={<NewReport />} />
         </Routes>
       </div>
     </div>
