@@ -45,7 +45,7 @@ const NavBar = (props) => {
       >
         {auth.token ? (
           <Fragment>
-            {/* <NavButton style={{}} to="/profile" label="profile" /> */}
+            <NavButton style={{}} to="/profile" label="profile" /> 
             <NavButton style={{}} to="/logout" label="logout" />
           </Fragment>
         ) : (

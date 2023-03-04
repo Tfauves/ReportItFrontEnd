@@ -24,7 +24,7 @@ const Profile = (props) => {
   useEffect(() => {
     console.log(owner.id);
     const _fetchOwner = async () => {
-      const response = await axios.get(`${apiHost}/api/profile/${owner.id}`, {
+      const response = await axios.get(`${apiHost}/api/profile/self`, {
         headers: {
           Authorization: `Bearer ${auth.token}`,
         },
@@ -41,8 +41,8 @@ const Profile = (props) => {
     _fetchOwner();
   }, [auth]);
 
-  const onClick = () => {
-    navigate("/sendReport")
+  const onClick = (props) => {
+    navigate(`/sendReport/${owner.serviceArea.id}`)
   }
 
   const displayProfile = () => {

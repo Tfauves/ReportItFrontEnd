@@ -12,7 +12,7 @@ import ProfileAddress from "../Profile/ProfileAddress";
 import AdminLogin from "../AreaAdmin/AdminLogin";
 import AdminDash from "../AreaAdmin/AdminDash";
 import RequestInfo from "../RequestInfo";
-import NewReport from "../NewReport";
+import NewReport from "../Report/NewReport";
 
 const AppRouter = () => {
   return (
@@ -24,6 +24,7 @@ const AppRouter = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile/:id" element={<Profile />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/about" element={<About />} />
           <Route path="/admin" element={<AdminView />} />
           <Route path="/logout" element={<Logout />} />
@@ -31,7 +32,7 @@ const AppRouter = () => {
           <Route path="/adminlogin" element={<AdminLogin />} />
           <Route path="/admindash" element={<AdminDash />} />
           <Route path="/info" element={<RequestInfo />} />
-          <Route path="/sendReport" element={<NewReport />} />
+          <Route path="/sendReport/:areaId" element={<NewReport />} />
         </Routes>
       </div>
     </div>
