@@ -13,6 +13,7 @@ const AdminLoginForm = ({ query, submitting, updateForm, onSubmit }) => {
 
   const handleSubmit = (e) => {
     onSubmit(e);
+    navigate("/admindash");
   };
 
   const handleNavigate = () => {

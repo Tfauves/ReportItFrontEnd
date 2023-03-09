@@ -24,23 +24,23 @@ const AdminLogin = () => {
   const onSubmit = async () => {
     setSubmitting(true);
     // need to refactor service admin in the back
-    // try {
-    //   const res = await axios.post(`${apiHost}/api/auth/adminsignin`, query);
-    //   const profileRes = await axios.get(`${apiHost}/api/profile/self`, {
-    //     headers: {
-    //       Authorization: `Bearer ${res.data.token}`,
-    //     },
-    //   });
-    //   console.log(profileRes.data);
-    //   setAuth({ token: res.data.token, profile: profileRes.data });
-    //   setSubmitting(false);
-    //   navigate(`/admindash/${profileRes.data.id}`);
-    //   saveAuth(res.data);
-    // } catch (err) {
-    //   console.error(err.response.data.message);
-    //   alert(err.response.data.error);
-    //   setSubmitting(false);
-    // }
+    try {
+      const res = await axios.post(`${apiHost}/api/auth/areaAdminLog`, query);
+      const profileRes = await axios.get(`${apiHost}/api/areaAdmin/self`, {
+        headers: {
+          Authorization: `Bearer ${res.data.token}`,
+        },
+      });
+      console.log(profileRes.data);
+      setAuth({ token: res.data.token, profile: profileRes.data });
+      setSubmitting(false);
+      navigate(`/admindash/${profileRes.data.id}`);
+      saveAuth(res.data);
+    } catch (err) {
+      console.error(err.response.data.message);
+      alert(err.response.data.error);
+      setSubmitting(false);
+    }
   };
 
   return (
