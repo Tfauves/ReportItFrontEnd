@@ -5,6 +5,8 @@ import InlineInputContainer from "../common/InlineInputContainer";
 import Input from "../common/Input";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
+import Select from "../common/Select";
+import ServiceAreas from "../ServiceArea/ServiceAreas";
 
 const NewUserForm = (props) => {
   const { query, updateForm, onSubmit } = props;
@@ -19,6 +21,11 @@ const NewUserForm = (props) => {
 
   return (
     <div>
+      <InlineInputContainer
+        style={{ marginLeft: "-6em", marginTop: "-2em", marginBottom: "2em" }}
+      >
+        <ServiceAreas />
+      </InlineInputContainer>
       <Form
         onSubmit={handleSubmit}
         style={{

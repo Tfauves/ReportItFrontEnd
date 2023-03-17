@@ -85,6 +85,7 @@ const Register = () => {
       <h1 style={{ marginTop: "3em", marginBottom: "2em", color: "#f1f1f1" }}>
         Create an account to connect with your local government.
       </h1>
+
       <NewUserForm query={query} updateForm={updateForm} onSubmit={onSubmit} />
     </div>
   );

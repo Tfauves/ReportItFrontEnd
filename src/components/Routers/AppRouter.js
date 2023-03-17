@@ -13,6 +13,7 @@ import AdminLogin from "../AreaAdmin/AdminLogin";
 import AdminDash from "../AreaAdmin/AdminDash";
 import RequestInfo from "../RequestInfo";
 import NewReport from "../Report/NewReport";
+import ServiceAreas from "../ServiceArea/ServiceAreas";
 
 const AppRouter = () => {
   return (
@@ -33,6 +34,8 @@ const AppRouter = () => {
           <Route path="/admindash" element={<AdminDash />} />
           <Route path="/info" element={<RequestInfo />} />
           <Route path="/sendReport/:areaId" element={<NewReport />} />
+          <Route path="/area" element={<ServiceAreas />} />
+
         </Routes>
       </div>
     </div>
