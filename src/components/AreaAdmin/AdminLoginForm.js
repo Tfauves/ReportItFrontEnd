@@ -7,17 +7,13 @@ import { useNavigate } from "react-router-dom";
 
 const AdminLoginForm = ({ query, submitting, updateForm, onSubmit }) => {
   const navigate = useNavigate();
+
   const handleChange = (e) => {
     updateForm(e.target.id, e.target.value);
   };
 
   const handleSubmit = (e) => {
     onSubmit(e);
-    navigate("/admindash");
-  };
-
-  const handleNavigate = () => {
-    navigate("/admindash");
   };
 
   return (

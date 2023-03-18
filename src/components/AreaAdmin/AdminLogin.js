@@ -34,7 +34,7 @@ const AdminLogin = () => {
       console.log(profileRes.data);
       setAuth({ token: res.data.token, profile: profileRes.data });
       setSubmitting(false);
-      navigate(`/admindash/${profileRes.data.id}`);
+      navigate(`/admindash`);
       saveAuth(res.data);
     } catch (err) {
       console.error(err.response.data.message);
