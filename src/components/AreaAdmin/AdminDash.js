@@ -6,6 +6,7 @@ import { apiHost } from "../../config";
 import ProfileCard from "../Profile/ProfileCard";
 import Report from "../Report/Report";
 import CircularProgress from "@mui/material/CircularProgress";
+import AreaAdminProfileCard from "./AreaAdminProfileCard";
 
 const AdminDash = (props) => {
   const params = useParams();
@@ -40,12 +41,11 @@ const AdminDash = (props) => {
   const displayProfile = () => {
     return (
       <div>
-        <ProfileCard userPro={owner} />
+        <AreaAdminProfileCard adminItems={owner} />
         {/* <h1 style={{ textDecoration: "underline", color: "#f1f1f1" }}>
           Your reports
         </h1>
         {displayReports()} */}
-
       </div>
     );
   };
@@ -68,6 +68,5 @@ const AdminDash = (props) => {
       {loading ? <CircularProgress color="secondary" /> : displayProfile()}
     </div>
   );
-
 };
 export default AdminDash;

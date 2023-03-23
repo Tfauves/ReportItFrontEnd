@@ -23,7 +23,6 @@ const AdminLogin = () => {
 
   const onSubmit = async () => {
     setSubmitting(true);
-    // need to refactor service admin in the back
     try {
       const res = await axios.post(`${apiHost}/api/auth/areaAdminLog`, query);
       const profileRes = await axios.get(`${apiHost}/api/areaAdmin/self`, {
