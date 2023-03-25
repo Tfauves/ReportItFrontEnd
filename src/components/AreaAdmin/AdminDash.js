@@ -7,6 +7,7 @@ import ProfileCard from "../Profile/ProfileCard";
 import Report from "../Report/Report";
 import CircularProgress from "@mui/material/CircularProgress";
 import AreaAdminProfileCard from "./AreaAdminProfileCard";
+import AdminReport from "../Report/AdminReport";
 
 const AdminDash = (props) => {
   const params = useParams();
@@ -19,7 +20,6 @@ const AdminDash = (props) => {
   const [auth] = useContext(AuthContext);
 
   useEffect(() => {
-    console.log(owner.id);
     const _fetchOwner = async () => {
       const response = await axios.get(`${apiHost}/api/areaAdmin/self`, {
         headers: {
@@ -27,8 +27,9 @@ const AdminDash = (props) => {
         },
       });
       console.log(response.data);
+
       setOwner(response.data);
-      setReports(response.data.report);
+      setReports(response.data.serviceArea.reports);
       setLoading(false);
     };
     setLoading(true);
@@ -42,17 +43,16 @@ const AdminDash = (props) => {
     return (
       <div>
         <AreaAdminProfileCard adminItems={owner} />
-        {/* <h1 style={{ textDecoration: "underline", color: "#f1f1f1" }}>
-          Your reports
-        </h1>
-        {displayReports()} */}
+        {displayReports()}
       </div>
     );
   };
 
-  // const displayReports = () => {
-  //   return reports.map((report) => <Report report={report} key={report.id} />);
-  // };
+  const displayReports = () => {
+    return reports.map((report) => (
+      <AdminReport report={report} key={report.id} />
+    ));
+  };
 
   return (
     <div

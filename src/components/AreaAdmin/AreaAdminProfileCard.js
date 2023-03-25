@@ -2,7 +2,7 @@ import React from "react";
 
 const AreaAdminProfileCard = (props) => {
   const { municipalityname, state, serviceArea } = props.adminItems;
-  // need to map service area reports
+
   return (
     <div>
       <h1 style={{ color: "#f1f1f1" }}>Municipality: {municipalityname}</h1>

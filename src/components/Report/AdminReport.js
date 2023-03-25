@@ -6,7 +6,7 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-const Report = (props) => {
+const AdminReport = (props) => {
   const { issueType, location, description } = props.report;
 
   return (
@@ -24,9 +24,11 @@ const Report = (props) => {
             Issue Description: {description}
           </Typography>
         </CardContent>
-        <CardActions>{/* <Button size="small">process</Button> */}</CardActions>
+        <CardActions>
+          <Button size="small">process</Button>
+        </CardActions>
       </Card>
     </div>
   );
 };
-export default Report;
+export default AdminReport;
