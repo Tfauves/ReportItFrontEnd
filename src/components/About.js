@@ -32,6 +32,7 @@ const About = () => {
               textDecoration: "underline",
               color: "#303030",
               marginLeft: ".5em",
+              fontFamily: "Lato, sans-serif",
             }}
           >
             About Us

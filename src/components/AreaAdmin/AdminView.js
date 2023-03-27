@@ -46,6 +46,7 @@ const AdminView = () => {
               sx={{ "&:hover": { color: "#303030" } }}
               style={{
                 backgroundColor: "gray",
+                letterSpacing: "2px",
               }}
               onClick={handleNavigate}
               variant="contained"
@@ -76,6 +77,7 @@ const AdminView = () => {
               sx={{ "&:hover": { color: "#303030" } }}
               style={{
                 backgroundColor: "gray",
+                letterSpacing: "2px",
               }}
               onClick={handleNavigateInfo}
               variant="contained"

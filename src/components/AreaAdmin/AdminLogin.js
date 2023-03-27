@@ -53,7 +53,15 @@ const AdminLogin = () => {
         backgroundColor: "#1c1c1b",
       }}
     >
-      <h1 style={{ marginTop: "3em", marginBottom: "2em", color: "#f1f1f1" }}>
+      <h1
+        style={{
+          marginTop: "3em",
+          marginBottom: "2em",
+          color: "#f1f1f1",
+          fontFamily: "Lato, sans-serif",
+          letterSpacing: "3px",
+        }}
+      >
         Admin Login
       </h1>
       <AdminLoginForm

@@ -52,7 +52,7 @@ const AdminLoginForm = ({ query, submitting, updateForm, onSubmit }) => {
       >
         <Button
           sx={{ "&:hover": { color: "#303030" } }}
-          style={{ marginBottom: ".5em" }}
+          style={{ marginBottom: ".5em", letterSpacing: "2px" }}
           onClick={handleSubmit}
           variant="contained"
           size="large"

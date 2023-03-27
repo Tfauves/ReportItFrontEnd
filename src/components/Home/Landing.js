@@ -22,14 +22,23 @@ const Landing = () => {
             style={{
               display: "flex",
               justifyContent: "center",
-              marginTop: "2em",
+              marginTop: "3em",
               marginBottom: "3em",
               color: "#f1f1f1",
+              letterSpacing: "8px",
+              fontFamily: "Lato, sans-serif",
             }}
           >
             Want To Be A Civic Crusader?
           </h1>
-          <h4 style={{ marginTop: "-3.5em", color: "#eee" }}>
+          <h4
+            style={{
+              color: "#a2a2a6",
+              letterSpacing: "3px",
+              marginTop: "-3.5em",
+              fontFamily: "Lato, sans-serif",
+            }}
+          >
             report issues in your area
           </h4>
           <Splash
@@ -45,6 +54,7 @@ const Landing = () => {
               marginTop: "5em",
               width: "35%",
               height: "5vh",
+              letterSpacing: "2px",
             }}
             size="large"
             variant="contained"
