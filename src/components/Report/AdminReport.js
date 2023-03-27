@@ -25,7 +25,9 @@ const AdminReport = (props) => {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">process</Button>
+          <Button size="small">Acknowledge</Button>
+          <Button size="small">Complete</Button>
+          <Button size="small">Unfounded</Button>
         </CardActions>
       </Card>
     </div>
