@@ -7,7 +7,20 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
 const AdminReport = (props) => {
-  const { issueType, location, description } = props.report;
+  const { issueType, location, description, id } = props.report;
+
+  const clickAcknowledge = () => {
+    console.log("report status set to pending");
+    console.log(id);
+  };
+
+  const clickComplete = () => {
+    console.log("report processed successfully");
+  };
+
+  const clickUnfounded = () => {
+    console.log("report status unfounded. report has been cleared");
+  };
 
   return (
     <div style={{ margin: "1em" }}>
@@ -25,9 +38,15 @@ const AdminReport = (props) => {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Acknowledge</Button>
-          <Button size="small">Complete</Button>
-          <Button size="small">Unfounded</Button>
+          <Button onClick={clickAcknowledge} size="small">
+            Acknowledge
+          </Button>
+          <Button onClick={clickComplete} size="small">
+            Complete
+          </Button>
+          <Button onClick={clickUnfounded} size="small">
+            Unfounded
+          </Button>
         </CardActions>
       </Card>
     </div>

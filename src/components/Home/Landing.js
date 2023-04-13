@@ -22,7 +22,7 @@ const Landing = () => {
             style={{
               display: "flex",
               justifyContent: "center",
-              marginTop: "3em",
+              marginTop: "2em",
               marginBottom: "3em",
               color: "#f1f1f1",
               letterSpacing: "8px",
@@ -44,16 +44,16 @@ const Landing = () => {
           <Splash
             image={landingImg}
             style={{
-              marginTop: "3em",
-              height: "35vh",
+              marginTop: "2em",
+              height: "45vh",
             }}
           />
 
           <Button
             style={{
-              marginTop: "5em",
-              width: "35%",
-              height: "5vh",
+              marginTop: "3em",
+              width: "20%",
+              height: "6vh",
               letterSpacing: "2px",
             }}
             size="large"
