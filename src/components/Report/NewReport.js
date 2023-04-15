@@ -3,9 +3,9 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../Providers/AuthProvider";
 import NewReportForm from "../Report/NewReportForm";
+import { apiHost } from "../../config";
 
 const NewReport = (props) => {
-  const host = "http://localhost:8080";
   let navigate = useNavigate();
   const params = useParams();
   const { areaId } = params;
@@ -30,7 +30,7 @@ const NewReport = (props) => {
     console.log(data);
 
     try {
-      const res = await axios.post(`${host}/api/report/${areaId}`, data, {
+      const res = await axios.post(`${apiHost}/api/report/${areaId}`, data, {
         headers: {
           Authorization: `Bearer ${auth.token}`,
         },

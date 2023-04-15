@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useEffect, useState, useContext } from "react";
+import axios from "axios";
+import { AuthContext } from "../Providers/AuthProvider";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import ReportProcess from "../ReportProcess";
 
 const AdminReport = (props) => {
-  const { issueType, location, description, id } = props.report;
+  const { issueType, location, description, id, timestamp, profile } =
+    props.report;
 
   const clickAcknowledge = () => {
     console.log("report status set to pending");
@@ -26,6 +30,12 @@ const AdminReport = (props) => {
     <div style={{ margin: "1em" }}>
       <Card sx={{ minWidth: 275 }}>
         <CardContent>
+          <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+            Sent By User Id: {profile.id}
+          </Typography>
+          <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+            Time: {timestamp}
+          </Typography>
           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
             Type: {issueType}
           </Typography>
