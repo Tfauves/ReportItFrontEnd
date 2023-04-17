@@ -23,7 +23,7 @@ const Landing = () => {
               display: "flex",
               justifyContent: "center",
               marginTop: "2em",
-              marginBottom: "3em",
+              marginBottom: "1.5em",
               color: "#f1f1f1",
               letterSpacing: "8px",
               fontFamily: "Lato, sans-serif",
@@ -35,7 +35,8 @@ const Landing = () => {
             style={{
               color: "#a2a2a6",
               letterSpacing: "3px",
-              marginTop: "-3.5em",
+              marginTop: "-2em",
+              marginBottom: "-.5em",
               fontFamily: "Lato, sans-serif",
             }}
           >
@@ -45,7 +46,7 @@ const Landing = () => {
             image={landingImg}
             style={{
               marginTop: "2em",
-              height: "45vh",
+              height: "55vh",
             }}
           />
 

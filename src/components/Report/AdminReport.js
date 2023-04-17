@@ -1,22 +1,21 @@
 import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { AuthContext } from "../Providers/AuthProvider";
-import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import ReportProcess from "../ReportProcess";
+import { apiHost } from "../../config";
 
 const AdminReport = (props) => {
-  const { issueType, location, description, id, timestamp, profile } =
+  const { issueType, location, description, id, timestamp, profile, pending } =
     props.report;
+  const [auth] = useContext(AuthContext);
 
-  const clickAcknowledge = () => {
-    console.log("report status set to pending");
-    console.log(id);
-  };
+  function clickAcknowledge() {
+    console.log("report acknowledged");
+  }
 
   const clickComplete = () => {
     console.log("report processed successfully");
@@ -30,6 +29,9 @@ const AdminReport = (props) => {
     <div style={{ margin: "1em" }}>
       <Card sx={{ minWidth: 275 }}>
         <CardContent>
+          <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+            pending status: {pending}
+          </Typography>
           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
             Sent By User Id: {profile.id}
           </Typography>
