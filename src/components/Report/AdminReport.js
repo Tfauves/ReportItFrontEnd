@@ -11,11 +11,12 @@ import { apiHost } from "../../config";
 const AdminReport = (props) => {
   const { issueType, location, description, id, timestamp, profile, pending } =
     props.report;
+
   const [auth] = useContext(AuthContext);
 
-  function clickAcknowledge() {
+  const clickAcknowledge = async (e) => {
     console.log("report acknowledged");
-  }
+  };
 
   const clickComplete = () => {
     console.log("report processed successfully");

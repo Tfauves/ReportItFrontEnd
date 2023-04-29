@@ -35,7 +35,6 @@ const AppRouter = () => {
           <Route path="/info" element={<RequestInfo />} />
           <Route path="/sendReport/:areaId" element={<NewReport />} />
           <Route path="/area" element={<ServiceAreas />} />
-
         </Routes>
       </div>
     </div>

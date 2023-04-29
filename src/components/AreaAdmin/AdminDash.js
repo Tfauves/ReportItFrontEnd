@@ -3,8 +3,6 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import { apiHost } from "../../config";
-import ProfileCard from "../Profile/ProfileCard";
-import Report from "../Report/Report";
 import CircularProgress from "@mui/material/CircularProgress";
 import AreaAdminProfileCard from "./AreaAdminProfileCard";
 import AdminReport from "../Report/AdminReport";
@@ -50,7 +48,9 @@ const AdminDash = (props) => {
 
   const displayReports = () => {
     return reports.map((report) => (
-      <AdminReport report={report} key={report.id} />
+      <div key={report.id}>
+        <AdminReport report={report} />
+      </div>
     ));
   };
 

@@ -9,7 +9,6 @@ import Report from "../Report/Report";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-
 const Profile = (props) => {
   const navigate = useNavigate();
   const params = useParams();
@@ -42,8 +41,8 @@ const Profile = (props) => {
   }, [auth]);
 
   const onClick = (props) => {
-    navigate(`/sendReport/${owner.serviceArea.id}`)
-  }
+    navigate(`/sendReport/${owner.serviceArea.id}`);
+  };
 
   const displayProfile = () => {
     return (
