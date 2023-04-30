@@ -21,7 +21,7 @@ const ProfileCard = (props) => {
 
   return (
     <div>
-      <div style={{ marginTop: "5em" }}>
+      <div style={{ marginTop: "4em" }}>
         <Box sx={{ flexGrow: 1 }}>
           <Grid container spacing={6}>
             <Grid item xs={6}>
@@ -30,18 +30,19 @@ const ProfileCard = (props) => {
                   <Avatar
                     alt="avatar"
                     src={defaultpp}
-                    sx={{ width: 100, height: 105 }}
+                    sx={{ width: 110, height: 108 }}
                   />
-                  <h1
-                    style={{
-                      color: "#303030",
-                      marginTop: "1em",
-                      paddding: "2em",
-                    }}
-                  >
-                    Username: {profileUsername}
-                  </h1>
                 </Stack>
+
+                <h2
+                  style={{
+                    marginTop: "-4em",
+                    marginLeft: "2em",
+                  }}
+                >
+                  {profileUsername}
+                </h2>
+
                 <Item>
                   <h1 style={{ color: "#303030" }}>Rank: {title}</h1>
                   <h1 style={{ color: "#303030" }}>Civic Wins: {civicWins}</h1>

@@ -21,7 +21,6 @@ const Profile = (props) => {
   const [auth] = useContext(AuthContext);
 
   useEffect(() => {
-    console.log(owner.id);
     const _fetchOwner = async () => {
       const response = await axios.get(`${apiHost}/api/profile/self`, {
         headers: {
@@ -48,23 +47,36 @@ const Profile = (props) => {
     return (
       <div>
         <ProfileCard userPro={owner} />
-        <h1 style={{ textDecoration: "underline", color: "#f1f1f1" }}>
-          Your reports
-        </h1>
-        {displayReports()}
-
-        <Button
-          sx={{ "&:hover": { color: "#303030" } }}
-          style={{
-            marginTop: "2em",
-            margin: "1em",
-          }}
-          onClick={onClick}
-          variant="contained"
-          size="large"
-        >
-          ReportIt
-        </Button>
+        <div>
+          <Button
+            variant="contained"
+            color="primary"
+            sx={{ "&:hover": { backgroundColor: "#a232a8" } }}
+            style={{
+              marginTop: "2em",
+              margin: "1em",
+              width: "20%",
+            }}
+            onClick={onClick}
+            size="large"
+          >
+            ReportIt
+          </Button>
+        </div>
+        <div>
+          <h1 style={{ textDecoration: "underline", color: "#f1f1f1" }}>
+            Your reports
+          </h1>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "nowrap",
+              flexDirection: "row",
+            }}
+          >
+            {displayReports()}
+          </div>
+        </div>
       </div>
     );
   };

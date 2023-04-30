@@ -1,10 +1,8 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
+import { experimentalStyled as styled } from "@mui/material/styles";
+import Paper from "@mui/material/Paper";
+import Grid from "@mui/material/Unstable_Grid2";
 
 const Report = (props) => {
   const {
@@ -17,34 +15,30 @@ const Report = (props) => {
     adminComment,
   } = props.report;
 
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: "center",
+    color: theme.palette.text.secondary,
+  }));
+
   return (
-    <div style={{ margin: "1em" }}>
-      <Card sx={{ minWidth: 275 }}>
-        <CardContent>
-          <Typography sx={{ fontSize: 15 }} color="text.secondary" gutterBottom>
-            Type: {issueType}
-          </Typography>
-          <Typography variant="h5" component="div"></Typography>
-          <Typography sx={{ mb: 1.5 }} color="text.secondary">
-            Location: {location}
-          </Typography>
-          <h3>Status</h3>
-          <Typography sx={{ mb: 1.5 }} color="text.secondary">
-            Active: {isActive}
-          </Typography>
-          <Typography sx={{ mb: 1.5 }} color="text.secondary">
-            Pending: {isPending}
-          </Typography>
-          <Typography sx={{ mb: 1.5 }} color="text.secondary">
-            Resolved: {isResolved}
-          </Typography>
-          <Typography variant="body2">
-            Issue Description: {description}
-          </Typography>
-          <Typography variant="body2">Admin Comment: {adminComment}</Typography>
-        </CardContent>
-        <CardActions>{/* <Button size="small">process</Button> */}</CardActions>
-      </Card>
+    <div style={{ padding: "1em" }}>
+      <Box sx={{ width: "100%" }}>
+        <Grid container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+          <Grid>
+            <Item>
+              <h1>Issue: {issueType} </h1>
+              <h4>{location}</h4>
+              <p>{description}</p>
+              <h4>Status</h4>
+              <p>Active: {isActive}</p>
+              <p>Admin Comments: {adminComment}</p>
+            </Item>
+          </Grid>
+        </Grid>
+      </Box>
     </div>
   );
 };
