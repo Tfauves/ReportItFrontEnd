@@ -60,22 +60,21 @@ const Profile = (props) => {
             onClick={onClick}
             size="large"
           >
-            ReportIt
+            Report It
           </Button>
         </div>
         <div>
-          <h1 style={{ textDecoration: "underline", color: "#f1f1f1" }}>
-            Your reports
-          </h1>
-          <div
+          <h1
             style={{
-              display: "flex",
-              flexWrap: "nowrap",
-              flexDirection: "row",
+              textDecoration: "underline",
+              color: "#f1f1f1",
+              textAlign: "center",
+              marginTop: "2em",
             }}
           >
-            {displayReports()}
-          </div>
+            Your reports
+          </h1>
+          {displayReports()}
         </div>
       </div>
     );

@@ -24,17 +24,21 @@ const Report = (props) => {
   }));
 
   return (
-    <div style={{ padding: "1em" }}>
-      <Box sx={{ width: "100%" }}>
-        <Grid container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+    <div style={{ padding: ".5em" }}>
+      <Box sx={{ width: "50%" }}>
+        <Grid>
           <Grid>
             <Item>
-              <h1>Issue: {issueType} </h1>
-              <h4>{location}</h4>
-              <p>{description}</p>
-              <h4>Status</h4>
-              <p>Active: {isActive}</p>
-              <p>Admin Comments: {adminComment}</p>
+              <h4 style={{ marginBottom: "-1em", textAlign: "left" }}>
+                Status
+              </h4>
+              <p style={{ textAlign: "left" }}>Active: {isActive}</p>
+              <h1 style={{ textAlign: "left" }}>Issue: {issueType} </h1>
+              <h4 style={{ textAlign: "left" }}>{location}</h4>
+              <p style={{ textAlign: "left" }}>{description}</p>
+              <p style={{ textAlign: "left" }}>
+                Admin Comments: {adminComment}
+              </p>
             </Item>
           </Grid>
         </Grid>

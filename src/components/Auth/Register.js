@@ -3,6 +3,7 @@ import NewUserForm from "./NewUserForm";
 import axios from "axios";
 import { AuthContext } from "../Providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import Link from "@mui/material/Link";
 
 const Register = () => {
   const host = process.env.REACT_APP_API_HOST || "http://localhost:8080";
@@ -87,6 +88,14 @@ const Register = () => {
       </h1>
 
       <NewUserForm query={query} updateForm={updateForm} onSubmit={onSubmit} />
+      <div style={{ marginLeft: "-6em", marginTop: "-1.5em" }}>
+        <p style={{ color: "#f1f1f1" }}>
+          Admin?{" "}
+          <Link href="/admin" underline="always">
+            Request a demo
+          </Link>
+        </p>
+      </div>
     </div>
   );
 };

@@ -4,6 +4,7 @@ import { AuthContext } from "../Providers/AuthProvider";
 
 const NavBar = (props) => {
   const [auth] = useContext(AuthContext);
+  const currentPath = window.location.pathname;
 
   return (
     <nav
@@ -44,16 +45,20 @@ const NavBar = (props) => {
         }}
       >
         {auth.token ? (
-          <Fragment>
-            <NavButton style={{}} to="/profile" label="profile" /> 
+          <div>
+            {currentPath === "/adminlogin" ? (
+              <NavButton style={{}} to="/admindash" label="dashboard" />
+            ) : (
+              <NavButton style={{}} to="/profile" label="dashboard" />
+            )}
+
             <NavButton style={{}} to="/logout" label="logout" />
-          </Fragment>
+          </div>
         ) : (
-          <Fragment>
-            <NavButton style={{color: "#303030"}} to="/login" label="login" />
+          <div>
+            <NavButton style={{ color: "#303030" }} to="/login" label="login" />
             <NavButton style={{}} to="/about" label="about" />
-            <NavButton style={{}} to="/admin" label="admin" />
-          </Fragment>
+          </div>
         )}
       </div>
     </nav>
