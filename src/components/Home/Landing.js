@@ -55,7 +55,7 @@ const Landing = () => {
 
           <Button
             style={{
-              marginTop: "3em",
+              marginTop: "2em",
               width: "18%",
               height: "5vh",
               letterSpacing: "3px",

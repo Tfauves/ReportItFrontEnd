@@ -14,8 +14,17 @@ const AdminReport = (props) => {
 
   const [auth] = useContext(AuthContext);
 
-  const clickAcknowledge = async (e) => {
-    console.log("report acknowledged");
+  const clickAcknowledge = async () => {
+    try {
+      await axios.put(`${apiHost}/api/reports/pending/${id}`, null, {
+        headers: {
+          Authorization: `Bearer ${auth.accessToken}`,
+        },
+      });
+      console.log("Report acknowledged");
+    } catch (error) {
+      console.error("Error acknowledging report:", error);
+    }
   };
 
   const clickComplete = () => {
@@ -42,12 +51,12 @@ const AdminReport = (props) => {
           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
             Type: {issueType}
           </Typography>
+          <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+            Issue Description: {description}
+          </Typography>
           <Typography variant="h5" component="div"></Typography>
           <Typography sx={{ mb: 1.5 }} color="text.secondary">
             Location: {location}
-          </Typography>
-          <Typography variant="body2">
-            Issue Description: {description}
           </Typography>
         </CardContent>
         <CardActions>

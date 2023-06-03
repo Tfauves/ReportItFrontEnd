@@ -13,7 +13,7 @@ const AdminDash = (props) => {
     id: params.id,
   });
 
-  const [reports, setReports] = useState({});
+  const [reports, setReports] = useState([]);
   const [loading, setLoading] = useState(true);
   const [auth] = useContext(AuthContext);
 
