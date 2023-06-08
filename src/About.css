@@ -1,0 +1,44 @@
+/* About.css */
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.text-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-heading {
+  text-decoration: underline;
+  color: #303030;
+  margin-left: 0.5em;
+  font-family: Lato, sans-serif;
+}
+
+.about-content {
+  color: #303030;
+  padding: 1em;
+}
+
+.image-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-splash {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+/* Media Queries for Responsive Layout */
+@media screen and (max-width: 768px) {
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+}
