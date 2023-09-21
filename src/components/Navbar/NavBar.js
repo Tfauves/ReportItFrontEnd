@@ -10,7 +10,7 @@ const NavBar = (props) => {
     <nav
       style={{
         display: "flex",
-        backgroundColor: "#303030",
+        backgroundColor: "#3A1447",
         position: "fixed",
         width: "100%",
         zIndex: 9999,
