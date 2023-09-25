@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import heroImg from "../../assets/cityLanding.jpg";
 import { useNavigate } from "react-router-dom";
-import { Button } from "@mui/material";
+// import { Button } from "@mui/material";
+import CustomBtn from "../common/CustomBtn";
 
 const Hero = styled.section`
   min-height: 70vh;
@@ -62,14 +63,9 @@ const FlexChildBlock = styled.div`
   min-width: 400px;
 `;
 
-const SignUpButton = styled(Button)`
-  margin-left: 500px;
-  background-color: #007bff;
-  color: #fff;
-  &:hover {
-    background-color: #0056b3;
-  }
-`;
+// const SignUpButton = styled(Button)``;
+
+// const GhostButton = styled(Button)``;
 
 const HeroSection = () => {
   const navigate = useNavigate();
@@ -89,16 +85,40 @@ const HeroSection = () => {
               report important issues in your area.
             </StyledSubHeader>
           </FlexChildBlock>
-        </FlexboxContainer>
+          <FlexChildBlock>
+            <CustomBtn
+              onClick={onClick}
+              backgroundColor="green"
+              textColor="white"
+              text="Sign up"
+            />
+            <CustomBtn
+              onClick={onClick}
+              backgroundColor="green"
+              textColor="white"
+              text="Request a demo"
+              variant="ghost"
+              style={{ marginRight: "30px" }}
+            />
 
-        <SignUpButton
-          size="large"
-          color="secondary"
-          variant="contained"
-          onClick={onClick}
-        >
-          sign up
-        </SignUpButton>
+            {/* <SignUpButton
+              size="large"
+              color="secondary"
+              variant="contained"
+              onClick={onClick}
+            >
+              Sign up
+            </SignUpButton>
+            <SignUpButton
+              size="large"
+              color="secondary"
+              variant="outlined"
+              onClick={onClick}
+            >
+              Get a demo
+            </SignUpButton> */}
+          </FlexChildBlock>
+        </FlexboxContainer>
       </Container>
     </Hero>
   );
