@@ -56,7 +56,6 @@ const NavBar = (props) => {
           </div>
         ) : (
           <div>
-            <NavButton style={{ color: "#303030" }} to="/login" label="login" />
             <NavButton style={{}} to="/about" label="about" />
           </div>
         )}

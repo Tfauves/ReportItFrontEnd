@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import heroImg from "../../assets/cityLanding.jpg";
 import { useNavigate } from "react-router-dom";
-// import { Button } from "@mui/material";
 import CustomBtn from "../common/CustomBtn";
 
 const Hero = styled.section`
@@ -63,15 +62,15 @@ const FlexChildBlock = styled.div`
   min-width: 400px;
 `;
 
-// const SignUpButton = styled(Button)``;
-
-// const GhostButton = styled(Button)``;
-
 const HeroSection = () => {
   const navigate = useNavigate();
 
-  const onClick = () => {
+  const register = () => {
     navigate("/register");
+  };
+
+  const logIn = () => {
+    navigate("/login");
   };
   return (
     <Hero>
@@ -87,36 +86,12 @@ const HeroSection = () => {
           </FlexChildBlock>
           <FlexChildBlock>
             <CustomBtn
-              onClick={onClick}
-              backgroundColor="green"
-              textColor="white"
-              text="Sign up"
+              marginRight="2em"
+              marginTop="30px"
+              onClick={register}
+              text="Sign Up"
             />
-            <CustomBtn
-              onClick={onClick}
-              backgroundColor="green"
-              textColor="white"
-              text="Request a demo"
-              variant="ghost"
-              style={{ marginRight: "30px" }}
-            />
-
-            {/* <SignUpButton
-              size="large"
-              color="secondary"
-              variant="contained"
-              onClick={onClick}
-            >
-              Sign up
-            </SignUpButton>
-            <SignUpButton
-              size="large"
-              color="secondary"
-              variant="outlined"
-              onClick={onClick}
-            >
-              Get a demo
-            </SignUpButton> */}
+            <CustomBtn onClick={logIn} text="Login" />
           </FlexChildBlock>
         </FlexboxContainer>
       </Container>

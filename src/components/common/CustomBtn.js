@@ -2,50 +2,43 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledCustomBtn = styled.button`
-  background-color: ${(props) =>
-    props.variant === "ghost"
-      ? "transparent"
-      : props.backgroundColor || "#4d0099"};
-  color: ${(props) =>
-    props.variant === "ghost"
-      ? props.textColor || "#4d0099"
-      : props.textColor || "#fff"};
-  border: ${(props) =>
-    props.variant === "ghost"
-      ? `1px solid ${props.backgroundColor || "#4d0099"}`
-      : "none"};
-  border-radius: 3px;
+  background-color: #330066;
+  border: 2px solid #330066;
+  border-radius: 30px;
+  box-shadow: #330066 4px 4px 0 0;
+  color: #330066;
   cursor: pointer;
-  padding: 10px 20px;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-
+  font-weight: 600;
+  font-size: 18px;
+  font-family: Poppins, sans-serif;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  min-width: 200px;
+  background-color: #fff;
+  box-shadow: #1a001a 2px 2px 0 0;
+  transform: translate(2px, 2px);
   &:hover {
-    background-color: ${(props) =>
-      props.variant === "ghost" ? "transparent" : "#fff"};
-    color: ${(props) =>
-      props.variant === "ghost"
-        ? props.backgroundColor || "#4d0099"
-        : "#4d0099"};
+    background: linear-gradient(to right, #6600cc, #1a001a);
+    color: #fff;
   }
 `;
 
-const CustomBtn = ({ onClick, backgroundColor, textColor, text, variant }) => {
+const CustomBtn = ({
+  onClick,
+  text,
+  marginTop,
+  marginRight,
+  marginBottom,
+  marginLeft,
+}) => {
   return (
     <StyledCustomBtn
+      style={{ marginTop, marginRight, marginBottom, marginLeft }}
       onClick={onClick}
-      backgroundColor={backgroundColor}
-      textColor={textColor}
-      variant={variant}
     >
       {text}
     </StyledCustomBtn>
   );
 };
-
-CustomBtn.defaultProps = {
-  backgroundColor: "#4d0099",
-  textColor: "#fff",
-};
-
 export default CustomBtn;
