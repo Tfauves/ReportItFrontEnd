@@ -2,11 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledCustomBtn = styled.button`
-  background-color: #330066;
   border: 2px solid #330066;
   border-radius: 30px;
-  box-shadow: #330066 4px 4px 0 0;
-  color: #330066;
+  color: #1a001a;
   cursor: pointer;
   font-weight: 600;
   font-size: 18px;
@@ -16,10 +14,10 @@ const StyledCustomBtn = styled.button`
   text-align: center;
   min-width: 200px;
   background-color: #fff;
-  box-shadow: #1a001a 2px 2px 0 0;
   transform: translate(2px, 2px);
+  transition: all ease-in-out 0.5s;
   &:hover {
-    background: linear-gradient(to right, #6600cc, #1a001a);
+    background: linear-gradient(to right, #1a001a, #6600cc);
     color: #fff;
   }
 `;

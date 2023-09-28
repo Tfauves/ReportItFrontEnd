@@ -1,25 +1,26 @@
 import React, { useState, useContext, Fragment } from "react";
 import NavButton from "./NavButton";
 import { AuthContext } from "../Providers/AuthProvider";
+import styled from "styled-components";
+
+const StyledNav = styled.nav`
+  display: flex;
+  background-color: #1a001a;
+  position: fixed;
+  width: 100%;
+  zindex: 9999;
+  top: 0;
+  left: 0;
+  flexdirection: row;
+  height: 60px;
+`;
 
 const NavBar = (props) => {
   const [auth] = useContext(AuthContext);
   const currentPath = window.location.pathname;
 
   return (
-    <nav
-      style={{
-        display: "flex",
-        backgroundColor: "#3A1447",
-        position: "fixed",
-        width: "100%",
-        zIndex: 9999,
-        top: 0,
-        left: 0,
-        flexDirection: "row",
-        height: "60px",
-      }}
-    >
+    <StyledNav>
       <div
         style={{
           display: "flex",
@@ -27,7 +28,6 @@ const NavBar = (props) => {
           padding: "0em 1.2em",
         }}
       >
-        {/* <h2 style={{ color: "#f1f1f1" }}>Report It</h2> */}
         <NavButton style={{}} to="/" label="Report It" />
       </div>
       <div
@@ -56,11 +56,15 @@ const NavBar = (props) => {
           </div>
         ) : (
           <div>
-            <NavButton style={{}} to="/about" label="about" />
+            {/* <NavButton
+              style={{ marginRight: "60px" }}
+              to="/about"
+              label="about"
+            /> */}
           </div>
         )}
       </div>
-    </nav>
+    </StyledNav>
   );
 };
 
