@@ -4,6 +4,7 @@ import axios from "axios";
 import { AuthContext } from "../Providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import Link from "@mui/material/Link";
+import styled from "styled-components";
 
 const Register = () => {
   const host = process.env.REACT_APP_API_HOST || "http://localhost:8080";
@@ -72,6 +73,16 @@ const Register = () => {
     }
   };
 
+  const StyledSecondHeader = styled.h2`
+    color: #fff;
+    letter-spacing: -0.03em;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-family: "Poppins", sans-serif;
+    font-size: 60px;
+    line-height: 94px;
+  `;
+
   return (
     <div
       style={{
@@ -83,12 +94,18 @@ const Register = () => {
         backgroundColor: "#1c1c1b",
       }}
     >
-      <h1 style={{ marginTop: "3em", marginBottom: "2em", color: "#f1f1f1" }}>
-        Create an account to connect with your local government.
-      </h1>
+      <StyledSecondHeader>
+        Connect with your local government.
+      </StyledSecondHeader>
 
       <NewUserForm query={query} updateForm={updateForm} onSubmit={onSubmit} />
-      <div style={{ marginLeft: "-6em", marginTop: "-1.5em" }}>
+      <div
+        style={{
+          marginLeft: "-6em",
+          marginTop: "-1.5em",
+          marginBottom: "10px",
+        }}
+      >
         <p style={{ color: "#f1f1f1" }}>
           Admin?{" "}
           <Link href="/admin" underline="always">

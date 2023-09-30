@@ -55,8 +55,8 @@ const LoginForm = ({ query, submitting, updateForm, onSubmit }) => {
         style={{ marginTop: "1em", display: "flex", flexDirection: "column" }}
       >
         <CustomBtn text="login" onClick={handleSubmit} />
-        <p style={{ marginLeft: "40px", color: "#f1f1f1", fontSize: "13px" }}>
-          dont have an
+        <p style={{ marginLeft: "30px", color: "#f1f1f1", fontSize: "1em" }}>
+          dont have an{" "}
           <Link href="/register" underline="always">
             account?
           </Link>
