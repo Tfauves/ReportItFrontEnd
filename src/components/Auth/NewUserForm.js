@@ -103,14 +103,14 @@ const NewUserForm = (props) => {
         <CustomBtn text={"Create"} onClick={handleSubmit} marginTop={"30px"} />
       </Form>
       <div>
-        <Box>
+        {/* <Box>
           <p style={{ color: "#f1f1f1" }}>
             already have an account?{" "}
             <Link href="/login" underline="always">
               login
             </Link>{" "}
           </p>
-        </Box>
+        </Box> */}
       </div>
     </div>
   );

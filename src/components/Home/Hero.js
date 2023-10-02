@@ -9,12 +9,12 @@ const Hero = styled.section`
   padding: 20vh 60px;
   background-image: url(${heroImg});
   background-size: cover;
+  background-attachment: fixed;
 `;
 
 const StyledHeader = styled.h1`
   color: #fff;
   letter-spacing: -0.02em;
-  margin-top: 0;
   margin-bottom: 20px;
   font-family: "Poppins", sans-serif;
   font-size: 75px;

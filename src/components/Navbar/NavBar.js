@@ -8,10 +8,10 @@ const StyledNav = styled.nav`
   background-color: #1a001a;
   position: fixed;
   width: 100%;
-  zindex: 9999;
+  z-index: 999;
   top: 0;
   left: 0;
-  flexdirection: row;
+  flex-direction: row;
   height: 60px;
 `;
 
@@ -21,29 +21,10 @@ const NavBar = (props) => {
 
   return (
     <StyledNav>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          padding: "0em 1.2em",
-        }}
-      >
+      <div style={{ marginTop: "15px" }}>
         <NavButton style={{}} to="/" label="Report It" />
       </div>
-      <div
-        style={{
-          flex: 1,
-          marginTop: "0em",
-          display: "flex",
-          flexDirection: "row",
-          borderRadius: "70px 0px 0px 70px",
-          background: "transparent",
-          userSelect: "none",
-          alignItems: "center",
-          padding: "0em 1.2em",
-          justifyContent: "flex-end",
-        }}
-      >
+      <div>
         {auth.token ? (
           <div>
             {currentPath === "/adminlogin" ? (

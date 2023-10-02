@@ -6,6 +6,52 @@ import { useNavigate } from "react-router-dom";
 import Link from "@mui/material/Link";
 import styled from "styled-components";
 
+const StyledSecondHeader = styled.h2`
+  color: #fff;
+  letter-spacing: -0.03em;
+  margin-bottom: 30px;
+  font-family: "Poppins", sans-serif;
+  font-size: 60px;
+  line-height: 94px;
+`;
+
+const StyledRegSection = styled.section`
+  min-height: 70vh;
+  // padding: 20vh 60px;
+  background-color: #1c1c1b;
+`;
+
+const RegContainer = styled.div`
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
+const RegFlexboxContainer = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  @media (max-width: 1200px) {
+    // Styles for laptops
+  }
+
+  @media (max-width: 992px) {
+    // Styles for tablets
+    flex-direction: column;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    // Styles for mobile devices
+    flex-direction: column;
+    height: auto;
+  }
+`;
+
+const RegFlexChildBlock = styled.div`
+  min-width: 400px;
+`;
+
 const Register = () => {
   const host = process.env.REACT_APP_API_HOST || "http://localhost:8080";
   let navigate = useNavigate();
@@ -73,47 +119,39 @@ const Register = () => {
     }
   };
 
-  const StyledSecondHeader = styled.h2`
-    color: #fff;
-    letter-spacing: -0.03em;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    font-family: "Poppins", sans-serif;
-    font-size: 60px;
-    line-height: 94px;
-  `;
-
   return (
-    <div
-      style={{
-        display: "flex",
-        flex: "1",
-        flexDirection: "column",
-        alignItems: "center",
-        minHeight: "100vh",
-        backgroundColor: "#1c1c1b",
-      }}
-    >
-      <StyledSecondHeader>
-        Connect with your local government.
-      </StyledSecondHeader>
-
-      <NewUserForm query={query} updateForm={updateForm} onSubmit={onSubmit} />
-      <div
-        style={{
-          marginLeft: "-6em",
-          marginTop: "-1.5em",
-          marginBottom: "10px",
-        }}
-      >
-        <p style={{ color: "#f1f1f1" }}>
-          Admin?{" "}
-          <Link href="/admin" underline="always">
-            Request a demo
-          </Link>
-        </p>
-      </div>
-    </div>
+    <StyledRegSection>
+      <RegContainer>
+        <RegFlexboxContainer>
+          <RegFlexChildBlock>
+            <StyledSecondHeader>
+              Connect with your local government.
+            </StyledSecondHeader>
+          </RegFlexChildBlock>
+          <RegFlexChildBlock>
+            <NewUserForm
+              query={query}
+              updateForm={updateForm}
+              onSubmit={onSubmit}
+            />
+          </RegFlexChildBlock>
+          <RegFlexChildBlock>
+            <p style={{ color: "#f1f1f1" }}>
+              already have an account?{" "}
+              <Link href="/login" underline="always">
+                login
+              </Link>{" "}
+            </p>
+            <p style={{ color: "#f1f1f1" }}>
+              Admin?{" "}
+              <Link href="/admin" underline="always">
+                Request a demo
+              </Link>
+            </p>
+          </RegFlexChildBlock>
+        </RegFlexboxContainer>
+      </RegContainer>
+    </StyledRegSection>
   );
 };
 
