@@ -4,7 +4,6 @@ import styled from "styled-components";
 const StyledMiddleSection = styled.section`
   min-height: 70vh;
   padding: 20vh 60px;
-
   background-size: cover;
 `;
 
@@ -67,6 +66,7 @@ const MiddleSection = () => {
           <FlexChildBlock>
             <StyledHeader>this middle section</StyledHeader>
           </FlexChildBlock>
+          <FlexChildBlock></FlexChildBlock>
         </FlexboxContainer>
       </Container>
     </StyledMiddleSection>

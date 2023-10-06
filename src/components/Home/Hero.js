@@ -6,7 +6,7 @@ import CustomBtn from "../common/CustomBtn";
 
 const Hero = styled.section`
   min-height: 70vh;
-  padding: 20vh 60px;
+  padding: 15vh 60px;
   background-image: url(${heroImg});
   background-size: cover;
   background-attachment: fixed;
@@ -24,7 +24,7 @@ const StyledHeader = styled.h1`
 const StyledSubHeader = styled.p`
   color: #f5f5f5;
   margin-bottom: 60px;
-  margin-top: -15px;
+  margin-top: 2px;
   font-family: "Poppins", sans-serif;
   font-size: 21px;
   font-weight: 400;
