@@ -29,6 +29,7 @@ const CustomBtn = ({
   marginRight,
   marginBottom,
   marginLeft,
+  type,
 }) => {
   return (
     <StyledCustomBtn
