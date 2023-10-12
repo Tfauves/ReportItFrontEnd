@@ -26,7 +26,7 @@ const NavBar = (props) => {
       </div>
       <div>
         {auth.token ? (
-          <div>
+          <div style={{ marginTop: "15px" }}>
             {currentPath === "/adminlogin" ? (
               <NavButton style={{}} to="/admindash" label="dashboard" />
             ) : (

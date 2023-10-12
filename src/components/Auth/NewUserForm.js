@@ -8,7 +8,6 @@ import Select from "../common/Select";
 import { Button } from "@material-ui/core";
 import ServiceAreas from "../ServiceArea/ServiceAreas";
 import CustomBtn from "../common/CustomBtn";
-import FormBtn from "../common/FormBtn";
 
 const NewUserForm = (props) => {
   const { query, updateForm, onSubmit } = props;

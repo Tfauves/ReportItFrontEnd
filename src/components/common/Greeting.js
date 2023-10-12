@@ -17,7 +17,7 @@ const Greeting = ({ greetings }) => {
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * greetings.length);
     setDynamicGreeting(greetings[randomIndex]);
-  }, [greetings]);
+  }, []);
 
   return <StyledSecondHeader>{dynamicGreeting}</StyledSecondHeader>;
 };
