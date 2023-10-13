@@ -5,9 +5,8 @@ import Input from "../common/Input";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
 import Select from "../common/Select";
-import { Button } from "@material-ui/core";
 import ServiceAreas from "../ServiceArea/ServiceAreas";
-import CustomBtn from "../common/CustomBtn";
+import FormBtn from "../common/FormBtn";
 
 const NewUserForm = (props) => {
   const { query, updateForm, onSubmit } = props;
@@ -101,31 +100,8 @@ const NewUserForm = (props) => {
             value={query.confirm}
           />
         </InlineInputContainer>
-        <Button
-          sx={{ "&:hover": { color: "#303030" } }}
-          style={{
-            marginTop: "2em",
-            margin: "1em",
-          }}
-          onClick={handleSubmit}
-          variant="contained"
-          size="large"
-        >
-          Create
-        </Button>
-
-        {/* <CustomBtn text="create" onClick={handleSubmit} marginTop={"30px"} /> */}
+        <FormBtn text="create" onClick={handleSubmit} marginTop={"30px"} />
       </Form>
-      <div>
-        {/* <Box>
-        <p style={{ color: "#f1f1f1" }}>
-          already have an account?{" "}
-          <Link href="/login" underline="always">
-            login
-          </Link>{" "}
-        </p>
-      </Box> */}
-      </div>
     </div>
   );
 };

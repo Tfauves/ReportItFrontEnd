@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const StyledCustomBtn = styled.button`
+const StyledFormBtn = styled.button`
   border: 2px solid #330066;
   border-radius: 30px;
   color: #1a001a;
@@ -22,7 +22,7 @@ const StyledCustomBtn = styled.button`
   }
 `;
 
-const CustomBtn = ({
+const FormBtn = ({
   onClick,
   text,
   marginTop,
@@ -31,12 +31,13 @@ const CustomBtn = ({
   marginLeft,
 }) => {
   return (
-    <StyledCustomBtn
+    <StyledFormBtn
       style={{ marginTop, marginRight, marginBottom, marginLeft }}
-      onClick={onClick}
+      type="submit"
     >
       {text}
-    </StyledCustomBtn>
+    </StyledFormBtn>
   );
 };
-export default CustomBtn;
+
+export default FormBtn;
