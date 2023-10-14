@@ -133,18 +133,18 @@ const Register = () => {
             />
           </RegFlexChildBlock>
           <RegFlexChildBlock>
-            <p style={{ color: "#f1f1f1" }}>
+            <p style={{ marginLeft: "25px", color: "#f1f1f1" }}>
               already have an account?{" "}
               <Link href="/login" underline="always">
                 login
               </Link>{" "}
             </p>
-            <p style={{ color: "#f1f1f1" }}>
+            {/* <p style={{ color: "#f1f1f1" }}>
               Admin?{" "}
               <Link href="/admin" underline="always">
                 Request a demo
               </Link>
-            </p>
+            </p> */}
           </RegFlexChildBlock>
         </RegFlexboxContainer>
       </RegContainer>

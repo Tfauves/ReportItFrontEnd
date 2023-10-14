@@ -100,7 +100,7 @@ const NewUserForm = (props) => {
             value={query.confirm}
           />
         </InlineInputContainer>
-        <FormBtn text="create" onClick={handleSubmit} marginTop={"30px"} />
+        <FormBtn text="create" onClick={handleSubmit} marginTop={"20px"} />
       </Form>
     </div>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import About from "../About";
 
 const StyledMiddleSection = styled.section`
   min-height: 70vh;
@@ -64,9 +65,11 @@ const MiddleSection = () => {
       <Container>
         <FlexboxContainer>
           <FlexChildBlock>
-            <StyledHeader>this middle section</StyledHeader>
+            <StyledHeader>Innovative Technology</StyledHeader>
           </FlexChildBlock>
-          <FlexChildBlock></FlexChildBlock>
+          <FlexChildBlock>
+            <About />
+          </FlexChildBlock>
         </FlexboxContainer>
       </Container>
     </StyledMiddleSection>
