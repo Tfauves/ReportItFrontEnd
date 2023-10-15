@@ -22,7 +22,7 @@ const ServiceAreas = () => {
 
   const displayAreas = () => {
     return (
-      <Select style={{}}>
+      <Select style={{ padding: "15px", marginTop: "30px" }}>
         <option value="default">Check Our Service Areas</option>
         {serviceArea.map((area) => (
           <option key={area.id}>

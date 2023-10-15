@@ -5,15 +5,7 @@ import { AuthContext } from "../Providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import Link from "@mui/material/Link";
 import styled from "styled-components";
-
-const StyledSecondHeader = styled.h2`
-  color: #fff;
-  letter-spacing: -0.03em;
-  margin-bottom: 30px;
-  font-family: "Poppins", sans-serif;
-  font-size: 60px;
-  line-height: 94px;
-`;
+import SignUpForm from "./SignUpForm";
 
 const StyledRegSection = styled.section`
   min-height: 70vh;
@@ -121,12 +113,7 @@ const Register = () => {
       <RegContainer>
         <RegFlexboxContainer>
           <RegFlexChildBlock>
-            <StyledSecondHeader>
-              Connect with your local government.
-            </StyledSecondHeader>
-          </RegFlexChildBlock>
-          <RegFlexChildBlock>
-            <NewUserForm
+            <SignUpForm
               query={query}
               updateForm={updateForm}
               onSubmit={onSubmit}
