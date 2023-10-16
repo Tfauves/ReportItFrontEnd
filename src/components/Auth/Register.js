@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-import NewUserForm from "./NewUserForm";
 import axios from "axios";
 import { AuthContext } from "../Providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
@@ -120,7 +119,13 @@ const Register = () => {
             />
           </RegFlexChildBlock>
           <RegFlexChildBlock>
-            <p style={{ marginLeft: "25px", color: "#f1f1f1" }}>
+            <p
+              style={{
+                marginLeft: "25px",
+                color: "#f1f1f1",
+                marginBottom: "25px",
+              }}
+            >
               already have an account?{" "}
               <Link href="/login" underline="always">
                 login
