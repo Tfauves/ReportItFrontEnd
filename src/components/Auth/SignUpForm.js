@@ -7,7 +7,7 @@ import ServiceAreas from "../ServiceArea/ServiceAreas";
 import FormBtn from "../common/FormBtn";
 
 const StyledFormHeader = styled.h2`
-  color: #fff;
+  color: #f8f8f9;
   letter-spacing: -0.03em;
   margin-bottom: 30px;
   margin-top: 1.5em;
@@ -26,7 +26,7 @@ const GradientBackground = styled.div`
 `;
 
 const SolidBackground = styled.div`
-  background: #f0f0f0;
+  background: #f8f8f9;
   width: 50%;
   float: left;
   height: 80vh;

@@ -19,7 +19,7 @@ const Login = () => {
     "Welcome Back",
     "Greetings Hero",
     "Go Ahead Login, Make A Difference",
-    "Your super power is action",
+    "Your Super Power Is Action",
   ];
 
   const updateForm = (field, value) => {
@@ -30,7 +30,6 @@ const Login = () => {
   };
 
   const onSubmit = async () => {
-    // submit query to backend to login.
     setSubmitting(true);
     try {
       const res = await axios.post(`${apiHost}/api/auth/signin`, query);
@@ -39,13 +38,13 @@ const Login = () => {
           Authorization: `Bearer ${res.data.token}`,
         },
       });
-      console.log(profileRes.data);
+      // console.log(profileRes.data);
       setAuth({ token: res.data.token, profile: profileRes.data });
       setSubmitting(false);
       navigate(`/profile/${profileRes.data.id}`);
       saveAuth(res.data);
     } catch (err) {
-      console.error(err.response.data.message);
+      // console.error(err.response.data.message);
       alert(err.response.data.error);
       setSubmitting(false);
     }
