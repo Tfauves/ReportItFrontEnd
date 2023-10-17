@@ -1,9 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Form from "../common/Form";
 import Input from "../common/Input";
-import { Button } from "@mui/material";
+import CustomBtn from "../common/CustomBtn";
 import InlineInputContainer from "../common/InlineInputContainer";
-import { useNavigate } from "react-router-dom";
+
+import Link from "@mui/material/Link";
 
 const LoginForm = ({ query, submitting, updateForm, onSubmit }) => {
   const navigate = useNavigate();
@@ -48,32 +50,17 @@ const LoginForm = ({ query, submitting, updateForm, onSubmit }) => {
             required
           />
         </InlineInputContainer>
-        {/* <Button disabled={submitting}>Login</Button> */}
       </Form>
       <div
         style={{ marginTop: "1em", display: "flex", flexDirection: "column" }}
       >
-        <Button
-          sx={{ "&:hover": { color: "#303030" } }}
-          style={{ marginBottom: ".5em" }}
-          onClick={handleSubmit}
-          variant="contained"
-          size="large"
-        >
-          login
-        </Button>
-        <p style={{ color: "#f1f1f1", fontSize: "13px" }}>
-          dont have an account?
+        <CustomBtn text="login" onClick={handleSubmit} />
+        <p style={{ marginLeft: "30px", color: "#f1f1f1", fontSize: "1em" }}>
+          dont have an{" "}
+          <Link href="/register" underline="always">
+            account?
+          </Link>
         </p>
-        <Button
-          sx={{ "&:hover": { color: "#303030" } }}
-          style={{ backgroundColor: "gray" }}
-          onClick={handleNavigate}
-          variant="contained"
-          size="large"
-        >
-          create account
-        </Button>
       </div>
     </div>
   );

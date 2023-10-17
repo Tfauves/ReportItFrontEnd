@@ -14,11 +14,12 @@ import AdminDash from "../AreaAdmin/AdminDash";
 import RequestInfo from "../RequestInfo";
 import NewReport from "../Report/NewReport";
 import ServiceAreas from "../ServiceArea/ServiceAreas";
+import NavBar from "../Navbar/NavBar";
 
 const AppRouter = () => {
   return (
     <div style={{ width: "100%" }}>
-      <Navbar />
+      <NavBar />
       <div style={{ marginTop: "50px", width: "100%" }}>
         <Routes>
           <Route path="/" element={<Landing />} />

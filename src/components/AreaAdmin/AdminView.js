@@ -1,15 +1,15 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Button } from "@mui/material";
+import CustomBtn from "../common/CustomBtn";
 
 const AdminView = () => {
   const navigate = useNavigate();
 
-  const handleNavigate = () => {
+  const navigateAdminLogin = () => {
     navigate("/adminlogin");
   };
 
-  const handleNavigateInfo = () => {
+  const navigateDemo = () => {
     navigate("/info");
   };
 
@@ -42,18 +42,7 @@ const AdminView = () => {
           <h1 style={{ color: "#303030" }}>Image or text here</h1>
           <p style={{ color: "#303030" }}>enter admin portal</p>
           <div>
-            <Button
-              sx={{ "&:hover": { color: "#303030" } }}
-              style={{
-                backgroundColor: "gray",
-                letterSpacing: "2px",
-              }}
-              onClick={handleNavigate}
-              variant="contained"
-              size="large"
-            >
-              click here
-            </Button>
+            <CustomBtn onClick={navigateAdminLogin} text="admin login" />
           </div>
         </div>
 
@@ -73,18 +62,7 @@ const AdminView = () => {
           <h1 style={{ color: "#f1f1f1" }}>Image or text here</h1>
           <p style={{ color: "#f1f1f1" }}>Request a demo</p>
           <div>
-            <Button
-              sx={{ "&:hover": { color: "#303030" } }}
-              style={{
-                backgroundColor: "gray",
-                letterSpacing: "2px",
-              }}
-              onClick={handleNavigateInfo}
-              variant="contained"
-              size="large"
-            >
-              learn more
-            </Button>
+            <CustomBtn onClick={navigateDemo} text="get a demo" />
           </div>
         </div>
       </div>

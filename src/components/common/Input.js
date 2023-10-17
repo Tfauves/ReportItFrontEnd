@@ -6,8 +6,7 @@ const Input = (props) => {
       <input
         style={
           props.error
-            ? // DR: Had to change 'style' to 'styles'.
-              { ...styles.inputError, ...props.errorStyle }
+            ? { ...styles.inputError, ...props.errorStyle }
             : { ...styles.input, ...props.style }
         }
         name={props.name}
@@ -35,10 +34,11 @@ const styles = {
     fontSize: 18,
     border: ".5px solid black",
     width: "100%",
-    height: "4em",
+    height: "3em",
     minWidth: 250,
     margin: 0,
-    borderRadius: 2,
+    marginBottom: ".5em",
+    borderRadius: 10,
     flex: 1,
   },
   inputError: {

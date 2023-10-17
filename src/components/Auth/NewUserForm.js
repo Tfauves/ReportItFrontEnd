@@ -1,13 +1,10 @@
 import React from "react";
-import { Button } from "@mui/material";
 import Form from "../common/Form";
 import InlineInputContainer from "../common/InlineInputContainer";
 import Input from "../common/Input";
-import Box from "@mui/material/Box";
-import Link from "@mui/material/Link";
-import Select from "../common/Select";
 import ServiceAreas from "../ServiceArea/ServiceAreas";
-
+import FormBtn from "../common/FormBtn";
+//// style this form next
 const NewUserForm = (props) => {
   const { query, updateForm, onSubmit } = props;
 
@@ -100,29 +97,8 @@ const NewUserForm = (props) => {
             value={query.confirm}
           />
         </InlineInputContainer>
-        <Button
-          sx={{ "&:hover": { color: "#303030" } }}
-          style={{
-            marginTop: "2em",
-            margin: "1em",
-          }}
-          onClick={handleSubmit}
-          variant="contained"
-          size="large"
-        >
-          Create
-        </Button>
+        <FormBtn text="create" onClick={handleSubmit} marginTop={"20px"} />
       </Form>
-      <div>
-        <Box>
-          <p style={{ color: "#f1f1f1" }}>
-            already have an account?{" "}
-            <Link href="/login" underline="always">
-              login
-            </Link>{" "}
-          </p>
-        </Box>
-      </div>
     </div>
   );
 };

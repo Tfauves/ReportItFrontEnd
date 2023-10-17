@@ -1,9 +1,47 @@
 import React, { useState, useContext } from "react";
-import NewUserForm from "./NewUserForm";
 import axios from "axios";
 import { AuthContext } from "../Providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import Link from "@mui/material/Link";
+import styled from "styled-components";
+import SignUpForm from "./SignUpForm";
+
+const StyledRegSection = styled.section`
+  min-height: 70vh;
+  // padding: 20vh 60px;
+  background-color: #1c1c1b;
+`;
+
+const RegContainer = styled.div`
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
+const RegFlexboxContainer = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  @media (max-width: 1200px) {
+    // Styles for laptops
+  }
+
+  @media (max-width: 992px) {
+    // Styles for tablets
+    flex-direction: column;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    // Styles for mobile devices
+    flex-direction: column;
+    height: auto;
+  }
+`;
+
+const RegFlexChildBlock = styled.div`
+  min-width: 400px;
+`;
 
 const Register = () => {
   const host = process.env.REACT_APP_API_HOST || "http://localhost:8080";
@@ -34,11 +72,9 @@ const Register = () => {
       return;
     }
     const data = query;
-    data.name = query.fname + " " + query.lname;
-    data.cohort = parseInt(query.cohort);
+    data.profileUsername = query.fname + " " + query.lname;
     try {
       const res = await axios.post(`${host}/api/auth/signup`, data);
-      // alert(res.data.message);
       login(data);
     } catch (err) {
       alert(err.response.data.message);
@@ -48,7 +84,6 @@ const Register = () => {
   const login = async (data) => {
     try {
       const res = await axios.post(`${host}/api/auth/signin`, data);
-      // alert(res.data.token);
       createNewUser(data, res.data.token);
     } catch (err) {
       alert(err.response.data.message);
@@ -73,30 +108,39 @@ const Register = () => {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flex: "1",
-        flexDirection: "column",
-        alignItems: "center",
-        minHeight: "100vh",
-        backgroundColor: "#1c1c1b",
-      }}
-    >
-      <h1 style={{ marginTop: "3em", marginBottom: "2em", color: "#f1f1f1" }}>
-        Create an account to connect with your local government.
-      </h1>
-
-      <NewUserForm query={query} updateForm={updateForm} onSubmit={onSubmit} />
-      <div style={{ marginLeft: "-6em", marginTop: "-1.5em" }}>
-        <p style={{ color: "#f1f1f1" }}>
-          Admin?{" "}
-          <Link href="/admin" underline="always">
-            Request a demo
-          </Link>
-        </p>
-      </div>
-    </div>
+    <StyledRegSection>
+      <RegContainer>
+        <RegFlexboxContainer>
+          <RegFlexChildBlock>
+            <SignUpForm
+              query={query}
+              updateForm={updateForm}
+              onSubmit={onSubmit}
+            />
+          </RegFlexChildBlock>
+          <RegFlexChildBlock>
+            <p
+              style={{
+                marginLeft: "25px",
+                color: "#f1f1f1",
+                marginBottom: "25px",
+              }}
+            >
+              already have an account?{" "}
+              <Link href="/login" underline="always">
+                login
+              </Link>{" "}
+            </p>
+            {/* <p style={{ color: "#f1f1f1" }}>
+              Admin?{" "}
+              <Link href="/admin" underline="always">
+                Request a demo
+              </Link>
+            </p> */}
+          </RegFlexChildBlock>
+        </RegFlexboxContainer>
+      </RegContainer>
+    </StyledRegSection>
   );
 };
 
