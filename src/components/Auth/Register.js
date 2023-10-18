@@ -72,7 +72,6 @@ const Register = () => {
       return;
     }
     const data = query;
-    data.profileUsername = query.fname + " " + query.lname;
     try {
       const res = await axios.post(`${host}/api/auth/signup`, data);
       login(data);

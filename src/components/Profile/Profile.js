@@ -8,6 +8,7 @@ import ProfileCard from "./ProfileCard";
 import Report from "../Report/Report";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import NewProfileCard from "./NewProfileCard";
 
 const Profile = (props) => {
   const navigate = useNavigate();
@@ -46,7 +47,7 @@ const Profile = (props) => {
   const displayProfile = () => {
     return (
       <div>
-        <ProfileCard userPro={owner} />
+        <NewProfileCard userPro={owner} />
         <div>
           <Button
             variant="contained"
