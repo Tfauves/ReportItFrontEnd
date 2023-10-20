@@ -1,45 +1,51 @@
 import React from "react";
-import Avatar from "@mui/material/Avatar";
-import defaultpp from "../../assets/defaultpp.png";
-import Paper from "@mui/material/Paper";
-import Grid from "@mui/material/Grid";
+import styled from "styled-components";
+import Avatar from "../common/Avatar";
+
+const StyledCardContainer = styled.div`
+  display: flex;
+  background-color: #fff;
+  margin-top: 4em;
+  width: 100%;
+  height: 50vh;
+  border-radius: 5px;
+`;
+
+const StyledAvatarContainer = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+`;
+
+const StyledProfileNameContainer = styled.div`
+  flex: 1;
+  display: flex;
+  padding: 20px;
+`;
+
+const StyledProfileName = styled.h3`
+  color: #323232;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+  line-height: 94px;
+`;
 
 const NewProfileCard = ({ userPro }) => {
   const { profileUsername, title, civicWins, serviceArea, profilePic } =
     userPro;
 
   return (
-    <div style={{ marginTop: "4em" }}>
-      <Grid container spacing={6}>
-        <Grid item xs={6}>
-          <Paper sx={{ p: 3 }}>
-            <Avatar
-              alt="avatar"
-              src={profilePic || defaultpp}
-              sx={{ width: 110, height: 108 }}
-            />
-            <h2>{profileUsername}</h2>
-            <div>
-              <h1 style={{ color: "#303030" }}>Rank: {title}</h1>
-              <h1 style={{ color: "#303030" }}>Civic Wins: {civicWins}</h1>
-            </div>
-          </Paper>
-        </Grid>
-        <Grid item xs={6}>
-          <Paper sx={{ p: 3 }}>
-            <div>
-              <h1 style={{ color: "#303030" }}>
-                Service Area: {serviceArea.id}
-              </h1>
-              <h1 style={{ color: "#303030" }}>
-                Area Name: {serviceArea.name}
-              </h1>
-              <h1 style={{ color: "#303030" }}>State: {serviceArea.state}</h1>
-            </div>
-          </Paper>
-        </Grid>
-      </Grid>
-    </div>
+    <StyledCardContainer>
+      <StyledAvatarContainer>
+        <Avatar />
+      </StyledAvatarContainer>
+      <StyledProfileNameContainer>
+        <StyledProfileName>{profileUsername}</StyledProfileName>
+      </StyledProfileNameContainer>
+    </StyledCardContainer>
   );
 };
 
