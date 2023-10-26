@@ -3,7 +3,6 @@ import styled from "styled-components";
 import defaultpp from "../../assets/defaultpp.png";
 
 const StyledAvatar = styled.img`
-  margin-top: 1em;
   border-radius: 50%;
   width: 70%;
   height: 60%;

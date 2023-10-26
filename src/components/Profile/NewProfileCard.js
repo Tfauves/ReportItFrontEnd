@@ -6,9 +6,21 @@ const StyledCardContainer = styled.div`
   display: flex;
   background-color: #fff;
   margin-top: 4em;
-  width: 100%;
-  height: 50vh;
+  width: 80%;
   border-radius: 5px;
+  @media (max-width: 1200px) {
+    // Styles for laptops
+  }
+
+  @media (max-width: 992px) {
+    // Styles for tablets
+    flex-direction: column;
+  }
+
+  @media (max-width: 768px) {
+    // Styles for mobile devices
+    flex-direction: column;
+  }
 `;
 
 const StyledAvatarContainer = styled.div`
@@ -19,7 +31,7 @@ const StyledAvatarContainer = styled.div`
 `;
 
 const StyledTextContainer = styled.div`
-  flex: 2;
+  flex: 1; /* Updated to make text container occupy the same space as the avatar */
   display: flex;
   flex-direction: column;
   justify-content: center;
