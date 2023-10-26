@@ -14,13 +14,15 @@ const StyledCardContainer = styled.div`
 const StyledAvatarContainer = styled.div`
   flex: 1;
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
   padding: 20px;
 `;
 
-const StyledProfileNameContainer = styled.div`
-  flex: 1;
+const StyledTextContainer = styled.div`
+  flex: 2;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 20px;
 `;
 
@@ -30,21 +32,31 @@ const StyledProfileName = styled.h3`
   margin-bottom: 20px;
   font-family: "Poppins", sans-serif;
   font-size: 30px;
-  line-height: 94px;
+  line-height: 1.2;
+`;
+
+const StyledText = styled.p`
+  color: #323232;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  line-height: 1.2;
 `;
 
 const NewProfileCard = ({ userPro }) => {
-  const { profileUsername, title, civicWins, serviceArea, profilePic } =
-    userPro;
+  const { profileUsername, title, civicWins, profilePic } = userPro;
 
   return (
     <StyledCardContainer>
       <StyledAvatarContainer>
         <Avatar />
       </StyledAvatarContainer>
-      <StyledProfileNameContainer>
+      <StyledTextContainer>
         <StyledProfileName>{profileUsername}</StyledProfileName>
-      </StyledProfileNameContainer>
+        <StyledText>{title}</StyledText>
+        <StyledText>Civic Wins: {civicWins}</StyledText>
+      </StyledTextContainer>
     </StyledCardContainer>
   );
 };
