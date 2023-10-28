@@ -41,7 +41,7 @@ const Login = () => {
       // console.log(profileRes.data);
       setAuth({ token: res.data.token, profile: profileRes.data });
       setSubmitting(false);
-      navigate(`/profile/${profileRes.data.id}`);
+      navigate(`/userDash/${profileRes.data.id}`);
       saveAuth(res.data);
     } catch (err) {
       // console.error(err.response.data.message);

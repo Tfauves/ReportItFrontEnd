@@ -37,7 +37,8 @@ const AppRouter = () => {
           <Route path="/info" element={<RequestInfo />} />
           <Route path="/sendReport/:areaId" element={<NewReport />} />
           <Route path="/area" element={<ServiceAreas />} />
-          <Route path="/userDash" element={<ProfileDash />} />
+          <Route path="/userDash/:id" element={<ProfileDash />} />
+          <Route path="/userProfile" element={<ProfileDash />} />
         </Routes>
       </div>
     </div>

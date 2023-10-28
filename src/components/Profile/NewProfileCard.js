@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Avatar from "../common/Avatar";
 
+// needs work with avatar and report button
 const StyledCardContainer = styled.div`
   display: flex;
   background-color: #fff;
@@ -39,12 +40,12 @@ const StyledTextContainer = styled.div`
 `;
 
 const StyledProfileName = styled.h3`
-  color: #323232;
+  color: #303030;
   letter-spacing: -0.02em;
   margin-bottom: 20px;
   font-family: "Poppins", sans-serif;
-  font-size: 30px;
-  line-height: 1.2;
+  font-size: 50px;
+  line-height: 94px;
 `;
 
 const StyledText = styled.p`

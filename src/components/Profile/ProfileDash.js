@@ -5,21 +5,58 @@ import { AuthContext } from "../Providers/AuthProvider";
 import { apiHost } from "../../config";
 import CircularProgress from "@mui/material/CircularProgress";
 import Report from "../Report/Report";
-import { Button } from "@mui/material";
+// import { Button } from "@mui/material";
+import CustomBtn from "../common/CustomBtn";
 import { useNavigate } from "react-router-dom";
 import NewProfileCard from "./NewProfileCard";
 import styled from "styled-components";
 
-const StyledHeader = styled.h1`
-  color: #fff;
+const DashboardContainer = styled.div`
+  background-color: #303030;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+`;
+
+const StyledSubHeader = styled.h3`
+  color: #303030;
   letter-spacing: -0.02em;
   margin-bottom: 20px;
   font-family: "Poppins", sans-serif;
-  font-size: 75px;
+  font-size: 50px;
   line-height: 94px;
 `;
 
-const Profile = (props) => {
+const ContentContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  padding: 20px;
+`;
+
+const LeftColumn = styled.div`
+  flex: 1;
+  margin-right: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-height: 60vh;
+`;
+
+const RightColumn = styled.div`
+  flex: 1;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-left: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+`;
+
+const ProfileDash = (props) => {
   const navigate = useNavigate();
   const params = useParams();
   const [owner, setOwner] = useState({
@@ -57,45 +94,23 @@ const Profile = (props) => {
 
   const displayProfile = () => {
     return (
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <div style={{ flex: 1, marginRight: "1em" }}>
-          <NewProfileCard userPro={owner} />
-          <div style={{ marginTop: "2em" }}>
-            <Button
-              variant="contained"
-              color="primary"
-              sx={{ "&:hover": { backgroundColor: "#a232a8" } }}
-              style={{ width: "100%" }}
-              onClick={onClick}
-              size="large"
-            >
-              Report It
-            </Button>
-          </div>
-        </div>
-        <div style={{ flex: 1, marginLeft: "1em" }}>
-          Service Area Name
-          <StyledHeader>{userServiceArea}</StyledHeader>
-          {displayServiceArea()}
-        </div>
-        <div style={{ flex: 1 }}>
-          <h1
-            style={{
-              textDecoration: "underline",
-              color: "#f1f1f1",
-              marginTop: "2em",
-            }}
-          >
-            Your Reports
-          </h1>
-          {displayReports()}
-        </div>
-      </div>
+      <DashboardContainer>
+        {loading ? (
+          <CircularProgress color="secondary" />
+        ) : (
+          <ContentContainer>
+            <LeftColumn>
+              <NewProfileCard userPro={owner} />
+              <CustomBtn onClick={onClick} text="Report It" />
+            </LeftColumn>
+            <RightColumn>
+              <StyledSubHeader>Reports Submitted</StyledSubHeader>
+              {displayReports()}
+            </RightColumn>
+          </ContentContainer>
+        )}
+      </DashboardContainer>
     );
-  };
-
-  const displayServiceArea = () => {
-    // Replace this with the content of your Service Area section
   };
 
   const displayReports = () => {
@@ -117,4 +132,4 @@ const Profile = (props) => {
   );
 };
 
-export default Profile;
+export default ProfileDash;
