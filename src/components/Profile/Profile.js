@@ -48,22 +48,21 @@ const Profile = (props) => {
     return (
       <div>
         <NewProfileCard userPro={owner} />
-        <div>
-          <Button
-            variant="contained"
-            color="primary"
-            sx={{ "&:hover": { backgroundColor: "#a232a8" } }}
-            style={{
-              marginTop: "2em",
-              margin: "1em",
-              width: "20%",
-            }}
-            onClick={onClick}
-            size="large"
-          >
-            Report It
-          </Button>
-        </div>
+        <div></div>
+        <Button
+          variant="contained"
+          color="primary"
+          sx={{ "&:hover": { backgroundColor: "#a232a8" } }}
+          style={{
+            marginTop: "2em",
+            margin: "1em",
+            width: "20%",
+          }}
+          onClick={onClick}
+          size="large"
+        >
+          Report It
+        </Button>
         <div>
           <h1
             style={{

@@ -12,11 +12,13 @@ import NewProfileCard from "./NewProfileCard";
 import styled from "styled-components";
 
 const DashboardContainer = styled.div`
+  margin-top: 3em;
   background-color: #303030;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
+  border-radius: 3px;
 `;
 
 const StyledSubHeader = styled.h3`
@@ -33,16 +35,17 @@ const ContentContainer = styled.div`
   justify-content: space-between;
   max-width: 1200px;
   padding: 20px;
+  width: 100%;
 `;
 
 const LeftColumn = styled.div`
   flex: 1;
   margin-right: 20px;
-  background-color: #fff;
+  background-color: #f5f5f5;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  max-height: 60vh;
+  height: 60vh;
 `;
 
 const RightColumn = styled.div`
@@ -101,6 +104,7 @@ const ProfileDash = (props) => {
           <ContentContainer>
             <LeftColumn>
               <NewProfileCard userPro={owner} />
+              <p style={{ marginLeft: "15px" }}>see an issue?</p>
               <CustomBtn onClick={onClick} text="Report It" />
             </LeftColumn>
             <RightColumn>

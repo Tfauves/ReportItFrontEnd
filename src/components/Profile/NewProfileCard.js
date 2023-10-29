@@ -6,9 +6,11 @@ import Avatar from "../common/Avatar";
 const StyledCardContainer = styled.div`
   display: flex;
   background-color: #fff;
-  margin-top: 4em;
+  margin-top: 3em;
   width: 80%;
-  border-radius: 5px;
+  margin-bottom: 30px;
+
+  border-radius: 3px;
   @media (max-width: 1200px) {
     // Styles for laptops
   }
@@ -24,15 +26,7 @@ const StyledCardContainer = styled.div`
   }
 `;
 
-const StyledAvatarContainer = styled.div`
-  flex: 1;
-  display: flex;
-  align-items: center;
-  padding: 20px;
-`;
-
 const StyledTextContainer = styled.div`
-  flex: 1; /* Updated to make text container occupy the same space as the avatar */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,19 +36,19 @@ const StyledTextContainer = styled.div`
 const StyledProfileName = styled.h3`
   color: #303030;
   letter-spacing: -0.02em;
-  margin-bottom: 20px;
   font-family: "Poppins", sans-serif;
   font-size: 50px;
   line-height: 94px;
 `;
 
 const StyledText = styled.p`
-  color: #323232;
+  color: #303030;
   letter-spacing: -0.02em;
-  margin-bottom: 20px;
   font-family: "Poppins", sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.2;
+  margin-left: -6em;
+  margin-top: -10px;
 `;
 
 const NewProfileCard = ({ userPro }) => {
@@ -62,12 +56,10 @@ const NewProfileCard = ({ userPro }) => {
 
   return (
     <StyledCardContainer>
-      <StyledAvatarContainer>
-        <Avatar />
-      </StyledAvatarContainer>
+      <Avatar />
       <StyledTextContainer>
         <StyledProfileName>{profileUsername}</StyledProfileName>
-        <StyledText>{title}</StyledText>
+        <StyledText>Civic Rating: {title}</StyledText>
         <StyledText>Civic Wins: {civicWins}</StyledText>
       </StyledTextContainer>
     </StyledCardContainer>
