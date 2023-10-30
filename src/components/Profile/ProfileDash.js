@@ -19,6 +19,7 @@ const DashboardContainer = styled.div`
   align-items: center;
   min-height: 100vh;
   border-radius: 3px;
+  width: 100%;
 `;
 
 const StyledSubHeader = styled.h3`
@@ -35,7 +36,6 @@ const ContentContainer = styled.div`
   justify-content: space-between;
   max-width: 1200px;
   padding: 20px;
-  width: 100%;
 `;
 
 const LeftColumn = styled.div`
