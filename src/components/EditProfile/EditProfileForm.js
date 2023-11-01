@@ -81,65 +81,21 @@ const EditProfileForm = (props) => {
         <FlexChildBlock>
           <SolidBackground>
             <Form style={{ marginTop: "4em" }} onSubmit={handleSubmit}>
-              <InlineInputContainer>
+              {/* <InlineInputContainer>
                 <Input
-                  id="username"
-                  placeholder="Email address"
-                  type="email"
+                  id="avatar"
+                  placeholder="img url"
                   onChange={handleChange}
-                  value={query.username}
+                  value={query.avatar}
                 />
-              </InlineInputContainer>
-              <InlineInputContainer>
-                <Input
-                  id="fname"
-                  placeholder="First Name"
-                  onChange={handleChange}
-                  value={query.fname}
-                />
-              </InlineInputContainer>
-              <InlineInputContainer>
-                <Input
-                  id="lname"
-                  placeholder="Last Name"
-                  onChange={handleChange}
-                  value={query.lname}
-                />
-              </InlineInputContainer>
+              </InlineInputContainer> */}
+
               <InlineInputContainer>
                 <Input
                   id="profileUsername"
                   placeholder="Username"
                   onChange={handleChange}
-                  required={true}
                   value={query.profileUsername}
-                />
-              </InlineInputContainer>
-              <InlineInputContainer>
-                <Input
-                  id="zip"
-                  placeholder="Zip"
-                  onChange={handleChange}
-                  required={true}
-                  value={query.zip}
-                />
-              </InlineInputContainer>
-              <InlineInputContainer>
-                <p>Your password must be at least 5 characters in length</p>
-                <Input
-                  id="password"
-                  placeholder="Password"
-                  type="password"
-                  onChange={handleChange}
-                  required={true}
-                  value={query.password}
-                />
-                <Input
-                  id="confirm"
-                  placeholder="Confirm Password"
-                  type="password"
-                  onChange={handleChange}
-                  value={query.confirm}
                 />
               </InlineInputContainer>
               <FormBtn
@@ -152,9 +108,6 @@ const EditProfileForm = (props) => {
           </SolidBackground>
           <GradientBackground>
             <StyledFormHeader>UpdateProfile</StyledFormHeader>
-            <InlineInputContainer>
-              <ServiceAreas />
-            </InlineInputContainer>
           </GradientBackground>
         </FlexChildBlock>
       </FlexboxContainer>

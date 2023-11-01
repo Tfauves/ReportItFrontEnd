@@ -16,6 +16,7 @@ import NewReport from "../Report/NewReport";
 import ServiceAreas from "../ServiceArea/ServiceAreas";
 import NavBar from "../Navbar/NavBar";
 import ProfileDash from "../Profile/ProfileDash";
+import EditProfile from "../EditProfile/EditProfile";
 
 const AppRouter = () => {
   return (
@@ -39,6 +40,7 @@ const AppRouter = () => {
           <Route path="/area" element={<ServiceAreas />} />
           <Route path="/userDash/:id" element={<ProfileDash />} />
           <Route path="/userProfile" element={<ProfileDash />} />
+          <Route path="updateProfile" element={<EditProfile />} />
         </Routes>
       </div>
     </div>

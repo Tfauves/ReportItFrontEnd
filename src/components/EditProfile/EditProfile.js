@@ -9,8 +9,8 @@ const EditProfile = () => {
   let navigate = useNavigate();
 
   const [query, setQuery] = useState({
-    name: "",
-    avatar: "",
+    // avatar: "",
+    profileUsername: "",
   });
 
   const [auth] = useContext(AuthContext);
@@ -23,15 +23,16 @@ const EditProfile = () => {
   };
 
   const onSubmit = async (token) => {
-    const data = query;
-    data.avatar = { url: data.avatar };
+    const data = query.profileUsername;
+    console.log(data);
+    // data.avatar = { url: data.avatar };
     try {
       const res = await axios.put(`${apiHost}/api/profile/`, data, {
         headers: {
           Authorization: `Bearer ${auth.token}`,
         },
       });
-      navigate("/profile");
+      // navigate("/userProfile");
     } catch (err) {
       alert(err.response.data.message);
     }
