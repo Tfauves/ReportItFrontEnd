@@ -81,21 +81,20 @@ const EditProfileForm = (props) => {
         <FlexChildBlock>
           <SolidBackground>
             <Form style={{ marginTop: "4em" }} onSubmit={handleSubmit}>
-              {/* <InlineInputContainer>
+              <InlineInputContainer>
                 <Input
                   id="avatar"
                   placeholder="img url"
                   onChange={handleChange}
                   value={query.avatar}
                 />
-              </InlineInputContainer> */}
+              </InlineInputContainer>
 
               <InlineInputContainer>
                 <Input
                   id="profileUsername"
                   placeholder="Username"
                   onChange={handleChange}
-                  value={query.profileUsername}
                 />
               </InlineInputContainer>
               <FormBtn

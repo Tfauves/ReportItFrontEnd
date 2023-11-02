@@ -102,7 +102,7 @@ const Register = () => {
       setAuth({ token, profile: res.data });
       console.log({ token });
       alert(res.data.id);
-      navigate(`/profile/${res.data.id}`);
+      navigate(`/userDash/${res.data.id}`);
     } catch (err) {
       alert(err.response.data.message);
     }

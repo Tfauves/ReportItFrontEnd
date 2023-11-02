@@ -11,6 +11,7 @@ const EditProfile = () => {
   const [query, setQuery] = useState({
     // avatar: "",
     profileUsername: "",
+    avatar: "",
   });
 
   const [auth] = useContext(AuthContext);
@@ -23,45 +24,27 @@ const EditProfile = () => {
   };
 
   const onSubmit = async (token) => {
-    const data = query.profileUsername;
+    const data = query;
     console.log(data);
     // data.avatar = { url: data.avatar };
     try {
-      const res = await axios.put(`${apiHost}/api/profile/`, data, {
+      const res = await axios.put(`${apiHost}/api/profile`, data, {
         headers: {
           Authorization: `Bearer ${auth.token}`,
         },
       });
-      // navigate("/userProfile");
+      navigate("/userProfile");
     } catch (err) {
       alert(err.response.data.message);
     }
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flex: "1",
-        flexDirection: "column",
-        minHeight: "100vh",
-      }}
-    >
-      <div
-        style={{
-          alignItems: "center",
-          display: "flex",
-          justifyContent: "center",
-          marginRight: "6em",
-        }}
-      >
-        <EditProfileForm
-          query={query}
-          updateForm={updateForm}
-          onSubmit={onSubmit}
-        />
-      </div>
-    </div>
+    <EditProfileForm
+      query={query}
+      updateForm={updateForm}
+      onSubmit={onSubmit}
+    />
   );
 };
 export default EditProfile;
