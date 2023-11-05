@@ -5,7 +5,6 @@ import { AuthContext } from "../Providers/AuthProvider";
 import { apiHost } from "../../config";
 import CircularProgress from "@mui/material/CircularProgress";
 import Report from "../Report/Report";
-// import { Button } from "@mui/material";
 import CustomBtn from "../common/CustomBtn";
 import { useNavigate } from "react-router-dom";
 import NewProfileCard from "./NewProfileCard";

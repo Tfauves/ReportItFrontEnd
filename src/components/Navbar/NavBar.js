@@ -32,7 +32,6 @@ const NavBar = (props) => {
             ) : (
               <NavButton style={{}} to="/userProfile" label="dashboard" />
             )}
-            <NavButton style={{}} to="/updateProfile" label="update profile" />
             <NavButton style={{}} to="/logout" label="logout" />
           </div>
         ) : (
