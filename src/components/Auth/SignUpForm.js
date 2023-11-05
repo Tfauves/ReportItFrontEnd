@@ -17,11 +17,13 @@ const StyledFormHeader = styled.h2`
   margin-left: 40px;
 `;
 
+const StyledParagraph = styled.p``;
+
 const GradientBackground = styled.div`
   background: linear-gradient(to right, #18043d, #351375);
   width: 50%;
   float: left;
-  height: 80vh;
+  height: 85vh;
   margin-top: 3em;
 `;
 
@@ -29,7 +31,7 @@ const SolidBackground = styled.div`
   background: #f8f8f9;
   width: 50%;
   float: left;
-  height: 80vh;
+  height: 85vh;
   margin-top: 3em;
 `;
 const FormContainer = styled.div`
@@ -79,7 +81,7 @@ const SignUpForm = (props) => {
       <FlexboxContainer>
         <FlexChildBlock>
           <SolidBackground>
-            <Form style={{ marginTop: "6em" }} onSubmit={handleSubmit}>
+            <Form style={{ marginTop: "4em" }} onSubmit={handleSubmit}>
               <InlineInputContainer>
                 <Input
                   id="username"
@@ -125,11 +127,27 @@ const SignUpForm = (props) => {
               </InlineInputContainer>
               <InlineInputContainer>
                 <p>Your password must be at least 5 characters in length</p>
+                <Input
+                  id="password"
+                  placeholder="Password"
+                  type="password"
+                  onChange={handleChange}
+                  required={true}
+                  value={query.password}
+                />
+                <Input
+                  id="confirm"
+                  placeholder="Confirm Password"
+                  type="password"
+                  onChange={handleChange}
+                  value={query.confirm}
+                />
               </InlineInputContainer>
               <FormBtn
                 text="create"
                 onClick={handleSubmit}
-                marginTop={"20px"}
+                marginTop={"10px"}
+                marginBottom={"30px"}
               />
             </Form>
           </SolidBackground>

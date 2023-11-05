@@ -30,9 +30,8 @@ const NavBar = (props) => {
             {currentPath === "/adminlogin" ? (
               <NavButton style={{}} to="/admindash" label="dashboard" />
             ) : (
-              <NavButton style={{}} to="/profile" label="dashboard" />
+              <NavButton style={{}} to="/userProfile" label="dashboard" />
             )}
-
             <NavButton style={{}} to="/logout" label="logout" />
           </div>
         ) : (

@@ -57,7 +57,7 @@ const Register = () => {
     profileUsername: "",
   });
 
-  const [auth, setAuth] = useContext(AuthContext);
+  const [auth, setAuth, saveAuth] = useContext(AuthContext);
 
   const updateForm = (field, value) => {
     setQuery({
@@ -72,7 +72,6 @@ const Register = () => {
       return;
     }
     const data = query;
-    data.profileUsername = query.fname + " " + query.lname;
     try {
       const res = await axios.post(`${host}/api/auth/signup`, data);
       login(data);
@@ -85,6 +84,7 @@ const Register = () => {
     try {
       const res = await axios.post(`${host}/api/auth/signin`, data);
       createNewUser(data, res.data.token);
+      saveAuth(res.data);
     } catch (err) {
       alert(err.response.data.message);
     }
@@ -100,8 +100,9 @@ const Register = () => {
       });
       console.log(res.data);
       setAuth({ token, profile: res.data });
+      console.log({ token });
       alert(res.data.id);
-      navigate(`/profile/${res.data.id}`);
+      navigate(`/userDash/${res.data.id}`);
     } catch (err) {
       alert(err.response.data.message);
     }

@@ -15,6 +15,7 @@ import RequestInfo from "../RequestInfo";
 import NewReport from "../Report/NewReport";
 import ServiceAreas from "../ServiceArea/ServiceAreas";
 import NavBar from "../Navbar/NavBar";
+import ProfileDash from "../Profile/ProfileDash";
 
 const AppRouter = () => {
   return (
@@ -36,6 +37,8 @@ const AppRouter = () => {
           <Route path="/info" element={<RequestInfo />} />
           <Route path="/sendReport/:areaId" element={<NewReport />} />
           <Route path="/area" element={<ServiceAreas />} />
+          <Route path="/userDash/:id" element={<ProfileDash />} />
+          <Route path="/userProfile" element={<ProfileDash />} />
         </Routes>
       </div>
     </div>

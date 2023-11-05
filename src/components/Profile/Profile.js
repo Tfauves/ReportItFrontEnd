@@ -8,6 +8,7 @@ import ProfileCard from "./ProfileCard";
 import Report from "../Report/Report";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import NewProfileCard from "./NewProfileCard";
 
 const Profile = (props) => {
   const navigate = useNavigate();
@@ -46,23 +47,22 @@ const Profile = (props) => {
   const displayProfile = () => {
     return (
       <div>
-        <ProfileCard userPro={owner} />
-        <div>
-          <Button
-            variant="contained"
-            color="primary"
-            sx={{ "&:hover": { backgroundColor: "#a232a8" } }}
-            style={{
-              marginTop: "2em",
-              margin: "1em",
-              width: "20%",
-            }}
-            onClick={onClick}
-            size="large"
-          >
-            Report It
-          </Button>
-        </div>
+        <NewProfileCard userPro={owner} />
+        <div></div>
+        <Button
+          variant="contained"
+          color="primary"
+          sx={{ "&:hover": { backgroundColor: "#a232a8" } }}
+          style={{
+            marginTop: "2em",
+            margin: "1em",
+            width: "20%",
+          }}
+          onClick={onClick}
+          size="large"
+        >
+          Report It
+        </Button>
         <div>
           <h1
             style={{

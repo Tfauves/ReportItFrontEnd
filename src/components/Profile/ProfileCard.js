@@ -55,7 +55,7 @@ const ProfileCard = (props) => {
                   Service Area: {serviceArea.id}
                 </h1>
                 <h1 style={{ color: "#303030" }}>
-                  Service Area: {serviceArea.name}
+                  Area Name: {serviceArea.name}
                 </h1>
                 <h1 style={{ color: "#303030" }}>
                   Service Area: {serviceArea.state}
