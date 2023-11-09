@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Avatar from "../common/Avatar";
+import defaultpp from "../../assets/defaultpp.png";
 
 // needs work with avatar and report button
 const StyledCardContainer = styled.div`
@@ -47,17 +48,15 @@ const StyledText = styled.p`
   font-family: "Poppins", sans-serif;
   font-size: 20px;
   line-height: 1.2;
-  margin-left: -6em;
   margin-top: -10px;
 `;
 
 const NewProfileCard = ({ userPro }) => {
   const { profileUsername, title, civicWins, profilePic } = userPro;
-
   return (
     <StyledCardContainer>
-      <Avatar />
       <StyledTextContainer>
+        <Avatar profilePic={profilePic} />
         <StyledProfileName>{profileUsername}</StyledProfileName>
         <StyledText>Civic Rating: {title}</StyledText>
         <StyledText>Civic Wins: {civicWins}</StyledText>

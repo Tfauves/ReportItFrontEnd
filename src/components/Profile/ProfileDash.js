@@ -9,6 +9,7 @@ import CustomBtn from "../common/CustomBtn";
 import { useNavigate } from "react-router-dom";
 import NewProfileCard from "./NewProfileCard";
 import styled from "styled-components";
+import Avatar from "../common/Avatar";
 
 const DashboardContainer = styled.div`
   margin-top: 3em;
