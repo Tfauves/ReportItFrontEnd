@@ -36,7 +36,7 @@ const NewReport = (props) => {
         },
       });
 
-      navigate("/profile");
+      navigate("/userProfile");
     } catch (err) {
       alert(err.response.data.message);
     }
