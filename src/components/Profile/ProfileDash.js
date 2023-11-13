@@ -43,7 +43,6 @@ const LeftColumn = styled.div`
   margin-top: 3em;
   flex: 1;
   margin-right: 20px;
-  background-color: #f5f5f5;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -63,7 +62,6 @@ const RightColumn = styled.div`
   margin-top: 3em;
   flex: 1;
   margin-left: 20px;
-  background-color: #fff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
