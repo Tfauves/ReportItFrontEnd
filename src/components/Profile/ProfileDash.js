@@ -9,7 +9,6 @@ import CustomBtn from "../common/CustomBtn";
 import { useNavigate } from "react-router-dom";
 import NewProfileCard from "./NewProfileCard";
 import styled from "styled-components";
-import Avatar from "../common/Avatar";
 
 const DashboardContainer = styled.div`
   margin-top: 3em;
@@ -41,6 +40,7 @@ const ContentContainer = styled.div`
 
 const LeftColumn = styled.div`
   margin-top: 3em;
+  background-color: #fff;
   flex: 1;
   margin-right: 20px;
   padding: 20px;
@@ -62,6 +62,7 @@ const RightColumn = styled.div`
   margin-top: 3em;
   flex: 1;
   margin-left: 20px;
+  background-color: #fff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -132,10 +133,6 @@ const ProfileDash = (props) => {
       </DashboardContainer>
     );
   };
-
-  // const displayReports = () => {
-  //   return reports.map((report) => <Report report={report} key={report.id} />);
-  // };
 
   const displayReports = () => {
     return reports.map((report) => (

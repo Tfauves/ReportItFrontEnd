@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import Avatar from "../common/Avatar";
-import defaultpp from "../../assets/defaultpp.png";
 
 // needs work with avatar and report button
 const StyledCardContainer = styled.div`
