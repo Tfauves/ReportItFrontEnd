@@ -18,7 +18,7 @@ const Report = (props) => {
 
   return (
     <div style={{ padding: ".5em" }}>
-      <Box sx={{ width: "50%" }}>
+      <Box sx={{ width: "100%" }}>
         <Grid>
           <Grid>
             <Item>

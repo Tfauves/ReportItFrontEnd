@@ -20,9 +20,7 @@ const NewUserForm = (props) => {
     <div>
       <InlineInputContainer
         style={{ marginLeft: "-6em", marginTop: "-2em", marginBottom: "2em" }}
-      >
-        <ServiceAreas />
-      </InlineInputContainer>
+      ></InlineInputContainer>
       <Form
         onSubmit={handleSubmit}
         style={{

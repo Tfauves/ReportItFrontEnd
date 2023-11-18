@@ -47,17 +47,15 @@ const StyledText = styled.p`
   font-family: "Poppins", sans-serif;
   font-size: 20px;
   line-height: 1.2;
-  margin-left: -6em;
   margin-top: -10px;
 `;
 
 const NewProfileCard = ({ userPro }) => {
   const { profileUsername, title, civicWins, profilePic } = userPro;
-
   return (
     <StyledCardContainer>
-      <Avatar />
       <StyledTextContainer>
+        <Avatar profilePic={profilePic} />
         <StyledProfileName>{profileUsername}</StyledProfileName>
         <StyledText>Civic Rating: {title}</StyledText>
         <StyledText>Civic Wins: {civicWins}</StyledText>

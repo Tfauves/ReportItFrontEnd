@@ -12,13 +12,13 @@ import styled from "styled-components";
 
 const DashboardContainer = styled.div`
   margin-top: 3em;
-  background-color: #303030;
+  background: linear-gradient(to bottom, #303030, #1a001a);
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
   border-radius: 3px;
-  width: 100%;
+  width: 90%;
 `;
 
 const StyledSubHeader = styled.h3`
@@ -28,6 +28,7 @@ const StyledSubHeader = styled.h3`
   font-family: "Poppins", sans-serif;
   font-size: 50px;
   line-height: 94px;
+  text-align: center;
 `;
 
 const ContentContainer = styled.div`
@@ -38,24 +39,41 @@ const ContentContainer = styled.div`
 `;
 
 const LeftColumn = styled.div`
+  margin-top: 3em;
+  background-color: #fff;
   flex: 1;
   margin-right: 20px;
-  background-color: #f5f5f5;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 800px;
+`;
+
+const ReportsGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
 `;
 
 const RightColumn = styled.div`
+  margin-top: 3em;
   flex: 1;
-  flex-wrap: wrap;
-  flex-direction: row;
   margin-left: 20px;
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: auto;
+`;
+
+const ReportCard = styled.div`
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
 const ProfileDash = (props) => {
@@ -108,7 +126,7 @@ const ProfileDash = (props) => {
             </LeftColumn>
             <RightColumn>
               <StyledSubHeader>Reports Submitted</StyledSubHeader>
-              {displayReports()}
+              <ReportsGrid>{displayReports()}</ReportsGrid>
             </RightColumn>
           </ContentContainer>
         )}
@@ -117,7 +135,11 @@ const ProfileDash = (props) => {
   };
 
   const displayReports = () => {
-    return reports.map((report) => <Report report={report} key={report.id} />);
+    return reports.map((report) => (
+      <ReportCard key={report.id}>
+        <Report report={report} />
+      </ReportCard>
+    ));
   };
 
   return (
